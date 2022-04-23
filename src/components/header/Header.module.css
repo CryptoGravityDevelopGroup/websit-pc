@@ -1,0 +1,46 @@
+.app-header {
+  height: 80px;
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+.app-logo {
+  width: 196px;
+  height: 48px;
+  margin-right: 211px;
+}
+.main-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 537px;
+  margin-right: 57px;
+}
+.menu-item {
+  color: rgba(255,255,255,0.6);
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.wallet-btn {
+  width: 137px;
+  height: 46px;
+  border-radius: 10px;
+  opacity: 1;
+  background: rgba(24,111,242,1);
+  color: rgba(255,255,255,1);
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.user-header {
+  width: 40px;
+  height: 40px;
+}
+
+
