@@ -3,3 +3,42 @@
   margin-left: auto;
   margin-right: auto;
 }
+.cryptoGravity-wrap {
+  height: 729px;
+}
+.cryptoGravity-content {
+  margin-top: 190px;
+}
+.cryptoGravity-title {
+  color: rgba(255,255,255,1);
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.cryptoGravity-desc {
+  width: 359px;
+  height: 54px;
+  opacity: 1;
+  color: rgba(255,255,255,0.8);
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+.start-btn {
+  width: 147px;
+  height: 58px;
+  border-radius: 10px;
+  opacity: 1;
+  cursor: pointer;
+  color: rgba(255,255,255,1);
+  font-size: 24px;
+  font-weight: 400;
+  background: linear-gradient(214deg, rgba(92,187,255,1) 0%, rgba(26,95,228,1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.start-btn-img {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
