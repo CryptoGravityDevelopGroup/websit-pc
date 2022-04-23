@@ -5,9 +5,17 @@
 }
 .cryptoGravity-wrap {
   height: 729px;
+  position: relative;
+}
+.cryptoGravity-earth-svg {
+  width: 1200px;
+  height: 729px;
+  overflow: hidden;
 }
 .cryptoGravity-content {
   margin-top: 190px;
+  position: absolute;
+  top: 0;
 }
 .cryptoGravity-title {
   color: rgba(255,255,255,1);

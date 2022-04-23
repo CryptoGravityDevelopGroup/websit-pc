@@ -8,14 +8,13 @@ import mainJson from '../../assets/lottie/cg_main.json';
 export function MainPage() {
   const couterRef = useRef(null);
   useEffect(() => {
-    console.log('couterRef', mainJson);
     lottie.loadAnimation({
       container: couterRef.current,
       renderer: 'svg',
       loop: true,
       autoplay: true,
       animationData: mainJson,
-      assetsPath: '/lottie/earth-animation/images'
+      assetsPath: '/lottie/earth-animation/images/'
     });
   }, [])
   return (
@@ -23,7 +22,9 @@ export function MainPage() {
       <Header/>
       <div className={styles["page-content"]}>
         <div className={styles["cryptoGravity-wrap"]}>
-          <div ref={couterRef}></div>
+          <div className={styles["cryptoGravity-earth-svg"]}>
+            <div style={{width:'100%', height:'100%'}} ref={couterRef}></div>
+          </div>
           <div className={styles["cryptoGravity-content"]}>
             <div className={styles["cryptoGravity-title"]}>CryptoGravity</div>
             <div className={styles["cryptoGravity-desc"]}>Building the next-generation intelligent application cloud service platform</div>
