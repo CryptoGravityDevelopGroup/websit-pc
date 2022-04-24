@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './MainPage.module.css';
 import { Header } from '../../components/header';
+import { Footer } from '../../components/footer';
 import startBtn from '../../assets/start-btn.png'
 import img_cwd_mid from '../../assets/img_cwd_mid.png'
 import lottie from 'lottie-web';
@@ -215,6 +216,7 @@ export function MainPage() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   )
 }
