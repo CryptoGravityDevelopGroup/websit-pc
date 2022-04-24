@@ -7,6 +7,7 @@ import lottie from 'lottie-web';
 import mainJson from '../../assets/lottie/cg_main.json';
 import bg_roadmap_line from '../../assets/bg_roadmap_line.png'
 import roadmap_date_add from '../../assets/ic_blue_add.png'
+import img_tokens from '../../assets/img_tokens.png'
 
 export function MainPage() {
   const couterRef = useRef(null);
@@ -196,6 +197,21 @@ export function MainPage() {
                 <li>Expand to explore digital asset types such as music and video.</li>
               </ul>
             </div>
+          </div>
+        </div>
+        <div className={styles["tokens-wrap"]}>
+          <div className={styles["introduction-title-wrap"]}>
+            <div className={styles["introduction-title"]}>Tokens</div>
+            <div className={styles["introduction-line"]}></div>
+          </div>
+          <div className={styles['introduction-content']}>
+            <div className={styles['tokens-tips-wrap']}>
+              <div style={{'marginTop':'86px'}}>
+                <div style={{'marginBottom': '22px'}}>We will officially release tokens soon</div>
+                <div>Follow us on Twitter for the latest news</div>
+              </div>
+            </div>
+            <img className={styles['img-tokens']} src={img_tokens} alt="" />
           </div>
         </div>
       </div>

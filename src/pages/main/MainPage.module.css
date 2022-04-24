@@ -286,3 +286,16 @@
   top: 0;
   left: 200px;
 }
+.tokens-wrap {
+  height: 494px;
+  width: 1200px;
+}
+.tokens-tips-wrap {
+  color: rgba(255,255,255,1);
+  font-size: 32px;
+  font-weight: 700;
+}
+.img-tokens {
+  width: 614px;
+  height: 370px;
+}
