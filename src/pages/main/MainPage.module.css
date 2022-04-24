@@ -50,3 +50,115 @@
   height: 24px;
   margin-left: 10px;
 }
+.introduction-wrap {
+  height: 873px;
+}
+
+.introduction-title {
+  color: rgba(255,255,255,1);
+  font-size: 38px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.introduction-line {
+  margin: 0 auto;
+  width: 124px;
+  height: 6px;
+  opacity: 1;
+  background: rgba(24,111,242,1);
+  margin-bottom: 64px;
+}
+.introduction-item {
+  width: 380px;
+  height: 270px;
+  border-radius: 10px;
+  opacity: 1;
+  background: rgba(9,11,34,0.8);
+}
+.introduction-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+.introduction-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.introduction-item:hover {
+  background: linear-gradient(214deg, rgba(92,187,255,1) 0%, rgba(26,95,228,1) 80%);
+  box-shadow: 0 0 30px 0 rgba(84,176,252,0.35);
+}
+.introduction-item-img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+}
+.introduction-item-title {
+  color: rgba(255,255,255,1);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.introduction-item-desc {
+  color: rgba(255,255,255,0.8);
+  font-size: 16px;
+  font-weight: 400;
+  width: 340px;
+}
+.do-wrap {
+  height: 873px;
+  position: relative;
+}
+.to-item {
+  width: 478px;
+  height: 223px;
+  background-size: 478px 223px;
+  background-repeat: no-repeat;
+  background-image: url('@/assets/img_cwd_1.png');
+  position: relative;
+  
+}
+.to-item-left {
+  background-image: url('@/assets/img_cwd_2.png');
+}
+.to-item-content {
+  position: absolute;
+  left: 18px;
+  top:  21px;
+  width: 320px;
+  box-sizing:border-box;
+  padding: 0 16px;
+}
+.to-item-content-left {
+  right: 18px;
+  left:auto;
+}
+.to-item-title {
+  color: rgba(24,111,242,1);
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 21px;
+  margin-bottom: 8px;
+}
+.to-item-desc {
+  color: rgba(255,255,255,0.8);
+  font-size: 16px;
+  font-weight: 400;
+}
+.to-item-desc-left {
+  float: right;
+}
+.to-center-image {
+  width: 352px;
+  height: 406px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
