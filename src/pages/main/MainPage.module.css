@@ -111,7 +111,7 @@
   width: 340px;
 }
 .do-wrap {
-  height: 873px;
+  height: 715px;
   position: relative;
 }
 .to-item {
@@ -161,4 +161,128 @@
   top: 0;
   left: 50%;
   transform: translate(-50%, 0);
+}
+.roadmap-wrap {
+  height: 606px;
+}
+.roadmap-content {
+  position: relative;
+}
+.roadmap-line {
+  width: 100%;
+}
+.roadmap-point {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background-size: 64px 64px;
+  cursor: pointer;
+  background-image: url('@/assets/ic_roadmap_dot_nol.png');
+}
+.roadmap-point-active {
+  background-image: url('@/assets/ic_roadmap_dot_sel.png');
+}
+.point-1 {
+  top: 0;
+  left: 122px;
+}
+.point-2 {
+  top: 0;
+  left: 363px;
+}
+.point-3 {
+  top: 0;
+  left: 604px;
+}
+.point-4 {
+  top: 0;
+  left: 847px;
+}
+.roadmap-date-wrap {
+  display: flex;
+  margin-top: 26px;
+  position: relative;
+  height: 85px;
+  width: 1200px;
+}
+.roadmap-date-item {
+  color: rgba(255,255,255,1);
+  font-size: 18px;
+  font-weight: 700;
+  position: absolute;
+  width: 120px;
+}
+.roadmap-date-2022Q3 {
+  top: 0;
+  left: 122px;
+}
+.roadmap-date-2022Q4 {
+  top: 0;
+  left: 363px;
+}
+.roadmap-date-2023Q1 {
+  top: 0;
+  left: 604px;
+}
+.roadmap-date-2023Q2 {
+  top: 0;
+  left: 847px;
+}
+.roadmap_date_add {
+  width: 12px;
+  height: 12px;
+}
+.point-detal-wrap {
+  width: 676px;
+  height: 137px;
+  opacity: 1;
+  border: 1px solid #356F8F;
+  background: rgba(5,2,22,1);
+  box-shadow: 0 0 20px 0 rgba(84,176,252,0.25);
+  border-radius: 5px;
+  position: relative;
+  top: 0;
+  left: 122px;
+  padding: 16px;
+  line-height: 24px;
+  color: rgba(255,255,255,1);
+  font-size: 16px;
+  font-weight: 400;
+  display: none;
+}
+.point-detal-active {
+  display: block;
+}
+.point-detal-triangle-wrap {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: -6px;
+  left: 25px;
+  border: 1px solid #356F8F;
+  box-shadow: 0 0 20px 0 rgba(84,176,252,0.25);
+  transform: rotate(45deg);
+  border-right: 0;
+  border-bottom: 0;
+  background: rgba(5,2,22,1);
+}
+.point-detal-triangle-right-wrap {
+  left: auto;
+  right: 25px;
+}
+.point-detal-2022Q3 {
+  top: 0;
+  left: 122px;
+}
+.point-detal-2022Q4 {
+  top: 0;
+  left: 363px;
+}
+.point-detal-2023Q1 {
+  top: 0;
+  left: -40px;
+}
+.point-detal-2023Q2 {
+  top: 0;
+  left: 200px;
 }
