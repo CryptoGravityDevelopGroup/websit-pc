@@ -9,7 +9,7 @@ export function Footer() {
     <div className={styles["app-footer"]}>
       <div className={styles["app-footer-content"]}>
         <span>© 2022 CryptoGravity. Al Rights Reserved.</span>
-        <span style={{"textDecoration":'underline'}}>Docs</span>
+        <span style={{"textDecoration":'underline', 'margin':'0 314px 0 286px'}}>Docs</span>
         <span className={styles["contact-wrap"]}>
           <span className={styles["contact-item-wrap"]}>
             <img src={ic_side_twitter} alt="" />

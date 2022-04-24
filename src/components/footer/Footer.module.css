@@ -5,11 +5,10 @@
   background: rgba(5,2,22,0.5);
 }
 .app-footer-content {
-  width: 1200px;
+  /* width: 1200px; */
   margin: 0 auto;
   color: #fff;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 .contact-wrap {
@@ -20,6 +19,9 @@
   margin-left: 24px;
   display: flex;
   align-items: center;
+}
+.contact-item-wrap:first-of-type {
+  margin-left: 0;
 }
 .contact-item-wrap>img {
   width: 20px;

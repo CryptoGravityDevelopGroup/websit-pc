@@ -9,10 +9,13 @@ import mainJson from '../../assets/lottie/cg_main.json';
 import bg_roadmap_line from '../../assets/bg_roadmap_line.png'
 import roadmap_date_add from '../../assets/ic_blue_add.png'
 import img_tokens from '../../assets/img_tokens.png'
+import bg_team_avatar from '../../assets/bg_team_avatar.png'
 
 export function MainPage() {
   const couterRef = useRef(null);
   const [curRoadmapPointIndex, setcurRoadmapPointIndex] = useState(1);
+  const [curTeamsIndex, setCurTeamsIndex] = useState(2);
+  const [teamAvatarListPos, setTeamAvatarListPos] = useState(0);
   const introductionList = [
     {
       logo: '/ic_intro_1.png',
@@ -53,6 +56,19 @@ export function MainPage() {
   const handleRoadPointChange = (index) => {
     setcurRoadmapPointIndex(index);
   }
+  const handleTeamsLeftClick = () => {
+    if(curTeamsIndex - 1 >= 0) {
+      setCurTeamsIndex(curTeamsIndex - 1)
+    }
+  }
+  const handleTeamsRightClick = () => {
+    if(curTeamsIndex + 1 <= 4) {
+      setCurTeamsIndex(curTeamsIndex + 1)
+    }
+  }
+  useEffect(() => {
+    setTeamAvatarListPos(0 - (curTeamsIndex-2)*250)
+  }, [curTeamsIndex]);
   return (
     <>
       <Header/>
@@ -213,6 +229,49 @@ export function MainPage() {
               </div>
             </div>
             <img className={styles['img-tokens']} src={img_tokens} alt="" />
+          </div>
+        </div>
+        <div className={styles["teams-wrap"]}>
+          <div className={styles["introduction-title-wrap"]}>
+            <div className={styles["introduction-title"]}>Teams</div>
+            <div className={styles["introduction-line"]}></div>
+          </div>
+          <div className={styles["team-avatar-list-wrap"]}>
+            <div className={styles["team-avatar-body-list-wrap"]} style={{'transform':`translate(${teamAvatarListPos}px)`, 'transition':'.3s'}}>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 0 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+                <img className={styles["team-avatar-img"]} src={bg_team_avatar} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 1 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+                <img className={styles["team-avatar-img"]} src={bg_team_avatar} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 2 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+                <img className={styles["team-avatar-img"]} src={bg_team_avatar} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 3 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+                <img className={styles["team-avatar-img"]} src={bg_team_avatar} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 4 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+                <img className={styles["team-avatar-img"]} src={bg_team_avatar} alt="" />
+              </div>
+            </div>
+          </div>
+          <div className={styles["teams-bottom-wrap"]}>
+            <div className={styles["teams-btn-left"]} onClick={() => {
+              handleTeamsLeftClick();
+            }}></div>
+            <div className={styles["teams-menber-desc-wrap"]}>
+              <div className={styles["teams-menber-name"]}>Leo</div>
+              <div className={styles["teams-menber-name-line"]}></div>
+              <div className={styles["teams-menber-desc"]}>
+                <div>Alibaba Product Expert</div> 
+                <div>ByteDance Product Supervisor</div>
+                <div>Former Head of Near Public Chain Asia Pacific NFT Art Community</div>
+                <div>7 years working experience in Internet products</div>
+              </div>
+            </div>
+            <div className={styles["teams-btn-right"]} onClick={() => {
+              handleTeamsRightClick();
+            }}></div>
           </div>
         </div>
       </div>

@@ -1,10 +1,11 @@
 .page-content {
-  width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  
 }
 .cryptoGravity-wrap {
+  width: 1200px;
   height: 729px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
 }
 .cryptoGravity-earth-svg {
@@ -52,6 +53,9 @@
 }
 .introduction-wrap {
   height: 873px;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .introduction-title {
@@ -113,6 +117,9 @@
 .do-wrap {
   height: 715px;
   position: relative;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .to-item {
   width: 478px;
@@ -164,6 +171,9 @@
 }
 .roadmap-wrap {
   height: 606px;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .roadmap-content {
   position: relative;
@@ -289,6 +299,8 @@
 .tokens-wrap {
   height: 494px;
   width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .tokens-tips-wrap {
   color: rgba(255,255,255,1);
@@ -298,4 +310,83 @@
 .img-tokens {
   width: 614px;
   height: 370px;
+}
+.teams-wrap {
+  width: 1288px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 594px;
+}
+.team-avatar-list-wrap {
+  width: 1288px;
+  height: 288px;
+  overflow: hidden;
+}
+.team-avatar-body-list-wrap {
+  width: 1288px;
+  height: 288px;
+  display: flex;
+  align-items: center;
+}
+.team-avatar-item {
+  margin-right: 60px;
+  width: 190px;
+  height: 190px;
+}
+.team-avatar-item:last-child{
+  margin-right: 0;
+}
+.team-avatar-img{
+  width: 100%;
+  height: 100%;
+}
+.team-avatar-item-active {
+  width: 288px;
+  height: 288px;
+  transition:.3s;
+}
+.teams-btn-left {
+  background-image: url('@/assets/ic_team_left.png');
+  background-size: 64px 64px;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+}
+.teams-btn-right {
+  background-image: url('@/assets/ic_team_right.png');
+  background-size: 64px 64px;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+}
+.teams-bottom-wrap {
+  display: flex;
+  height: 145px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+
+}
+.teams-menber-desc-wrap {
+  width: 570px;
+}
+.teams-menber-name {
+  color: rgba(255,255,255,1);
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 48px;
+}
+.teams-menber-name-line {
+  width: 38px;
+  height: 1px;
+  background-color: #fff;
+  margin: 10px auto;
+}
+.teams-menber-desc {
+  text-align: center;
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
 }
