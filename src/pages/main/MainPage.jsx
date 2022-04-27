@@ -3,9 +3,9 @@ import styles from './MainPage.module.css';
 import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
 import startBtn from '../../assets/start-btn.png'
-import img_cwd_mid from '../../assets/img_cwd_mid.png'
 import lottie from 'lottie-web';
 import mainJson from '../../assets/lottie/cg_main.json';
+import wecandoJson from '../../assets/lottie/wecando.json'
 import bg_roadmap_line from '../../assets/bg_roadmap_line.png'
 import roadmap_date_add from '../../assets/ic_blue_add.png'
 import img_tokens from '../../assets/img_tokens.png'
@@ -13,6 +13,7 @@ import bg_team_avatar from '../../assets/bg_team_avatar.png'
 
 export function MainPage() {
   const couterRef = useRef(null);
+  const weCanDoRef = useRef(null);
   const [curRoadmapPointIndex, setcurRoadmapPointIndex] = useState(1);
   const [curTeamsIndex, setCurTeamsIndex] = useState(2);
   const [teamAvatarListPos, setTeamAvatarListPos] = useState(0);
@@ -51,6 +52,16 @@ export function MainPage() {
       autoplay: true,
       animationData: mainJson,
       assetsPath: '/lottie/earth-animation/images/'
+    });
+  }, [])
+  useEffect(() => {
+    lottie.loadAnimation({
+      container: weCanDoRef.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: wecandoJson,
+      assetsPath: '/lottie/we-can-do/images/'
     });
   }, [])
   const handleRoadPointChange = (index) => {
@@ -143,7 +154,7 @@ export function MainPage() {
                 <div className={styles['to-item-desc']}>Provide developers with a complete technology platform, through middleware technology, enable developers to quickly build their own applications with minimal R&D costs</div>
               </div>
             </div>
-            <img className={styles['to-center-image']} src={img_cwd_mid} alt="" />
+            <div className={styles['to-center-image']} ref={weCanDoRef}></div>
           </div>
         </div>
         <div className={styles["roadmap-wrap"]} id='roadmap'>
