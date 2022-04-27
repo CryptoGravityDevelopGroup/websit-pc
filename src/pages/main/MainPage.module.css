@@ -94,7 +94,7 @@
   margin-bottom: 30px;
 }
 .introduction-item:hover {
-  background: linear-gradient(214deg, rgba(92,187,255,1) 0%, rgba(26,95,228,1) 80%);
+  background: linear-gradient(214deg, rgba(92,187,255,1) 0%, rgba(26,95,228,0.1) 100%);
   box-shadow: 0 0 30px 0 rgba(84,176,252,0.35);
 }
 .introduction-item-img {
