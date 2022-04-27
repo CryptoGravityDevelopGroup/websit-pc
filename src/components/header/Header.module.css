@@ -4,6 +4,11 @@
   margin: auto;
   display: flex;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
 }
 .app-logo {
   width: 196px;

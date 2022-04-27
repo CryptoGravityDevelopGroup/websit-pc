@@ -73,7 +73,7 @@ export function MainPage() {
     <>
       <Header/>
       <div className={styles["page-content"]}>
-        <div className={styles["cryptoGravity-wrap"]}>
+        <div className={styles["cryptoGravity-wrap"]} id='home'>
           <div className={styles["cryptoGravity-earth-svg"]}>
             <div style={{width:'100%', height:'100%'}} ref={couterRef}></div>
           </div>
@@ -86,7 +86,7 @@ export function MainPage() {
             </div>
           </div>
         </div>
-        <div className={styles["introduction-wrap"]}>
+        <div className={styles["introduction-wrap"]} id='introduction'>
           <div className={styles["introduction-title-wrap"]}>
             <div className={styles["introduction-title"]}>Introduction</div>
             <div className={styles["introduction-line"]}></div>
@@ -146,7 +146,7 @@ export function MainPage() {
             <img className={styles['to-center-image']} src={img_cwd_mid} alt="" />
           </div>
         </div>
-        <div className={styles["roadmap-wrap"]}>
+        <div className={styles["roadmap-wrap"]} id='roadmap'>
           <div className={styles["introduction-title-wrap"]}>
             <div className={styles["introduction-title"]}>Roadmap</div>
             <div className={styles["introduction-line"]}></div>
@@ -216,7 +216,7 @@ export function MainPage() {
             </div>
           </div>
         </div>
-        <div className={styles["tokens-wrap"]}>
+        <div className={styles["tokens-wrap"]} id='tokens'>
           <div className={styles["introduction-title-wrap"]}>
             <div className={styles["introduction-title"]}>Tokens</div>
             <div className={styles["introduction-line"]}></div>
@@ -231,7 +231,7 @@ export function MainPage() {
             <img className={styles['img-tokens']} src={img_tokens} alt="" />
           </div>
         </div>
-        <div className={styles["teams-wrap"]}>
+        <div className={styles["teams-wrap"]} id='teams'>
           <div className={styles["introduction-title-wrap"]}>
             <div className={styles["introduction-title"]}>Teams</div>
             <div className={styles["introduction-line"]}></div>
