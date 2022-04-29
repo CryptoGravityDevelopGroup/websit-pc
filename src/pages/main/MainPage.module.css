@@ -327,10 +327,23 @@
   color: rgba(255,255,255,1);
   font-size: 32px;
   font-weight: 700;
+  transition: 3s;
+  opacity: 0;
+}
+.tokens-tips-wrap-active {
+  opacity: 1;
 }
 .img-tokens {
   width: 614px;
   height: 370px;
+  position: relative;
+  opacity: 0;
+  transition: 0.5s;
+  right: -100px;
+}
+.imgs-token-active {
+  opacity: 1;
+  right: 0;
 }
 .teams-wrap {
   width: 1288px;

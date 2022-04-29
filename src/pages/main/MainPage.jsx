@@ -18,6 +18,7 @@ export function MainPage() {
   const [curTeamsIndex, setCurTeamsIndex] = useState(2);
   const [teamAvatarListPos, setTeamAvatarListPos] = useState(0);
   const [weCanDoShowStatus, setWeCanDoShowStatus] = useState(false);
+  const [tokensStatus, setTokensStatusStatus] = useState(false);
   const introductionList = [
     {
       logo: '/ic_intro_1.png',
@@ -67,10 +68,17 @@ export function MainPage() {
   }, [])
   const handleScroll = () => {
     const wenCanDoDOM = document.querySelector("#weCando");
+    const tokensDOM = document.querySelector('#tokens');
     if(window.scrollY>wenCanDoDOM.offsetTop - 100) {
       setWeCanDoShowStatus(true);
     } else {
       setWeCanDoShowStatus(false);
+    }
+
+    if(window.scrollY>tokensDOM.offsetTop - 100) {
+      setTokensStatusStatus(true);
+    } else {
+      setTokensStatusStatus(false);
     }
   }
   useEffect(() => {
@@ -245,13 +253,13 @@ export function MainPage() {
             <div className={styles["introduction-line"]}></div>
           </div>
           <div className={styles['introduction-content']}>
-            <div className={styles['tokens-tips-wrap']}>
+            <div className={[styles['tokens-tips-wrap'], tokensStatus ? styles['tokens-tips-wrap-active']: ''].join(' ')}>
               <div style={{'marginTop':'86px'}}>
                 <div style={{'marginBottom': '22px'}}>We will officially release tokens soon</div>
                 <div>Follow us on Twitter for the latest news</div>
               </div>
             </div>
-            <img className={styles['img-tokens']} src={img_tokens} alt="" />
+            <img className={[styles['img-tokens'], tokensStatus ? styles['imgs-token-active'] : ''].join(' ')} src={img_tokens} alt="" />
           </div>
         </div>
         <div className={styles["teams-wrap"]} id='teams'>
