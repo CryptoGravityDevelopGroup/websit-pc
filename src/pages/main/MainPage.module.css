@@ -128,10 +128,25 @@
   background-repeat: no-repeat;
   background-image: url('@/assets/img_cwd_1.png');
   position: relative;
-  
+  transition: 1s;
+  left: 120px;
+  opacity: 0;
 }
 .to-item-left {
+  left: -120px;
+  opacity: 0;
   background-image: url('@/assets/img_cwd_2.png');
+  transition: 1s;
+  left: -120px;
+  opacity: 0;
+}
+.to-item-active {
+  left: 0;
+  opacity: 1;
+}
+.to-item-left-active {
+  left: 0;
+  opacity: 1;
 }
 .to-item-content {
   position: absolute;
@@ -169,6 +184,11 @@
   left: 50%;
   transform: translate(-50%, 0);
   overflow: hidden;
+  opacity: 0;
+}
+.to-center-image-active {
+  opacity: 1;
+  transition: .3s;
 }
 .roadmap-wrap {
   height: 606px;
@@ -344,7 +364,6 @@
 .team-avatar-item-active {
   width: 288px;
   height: 288px;
-  transition:.3s;
 }
 .teams-btn-left {
   background-image: url('@/assets/ic_team_left.png');

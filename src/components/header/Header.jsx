@@ -9,7 +9,7 @@ export function Header() {
     const PageId = document.querySelector("#" + key);
     console.log('PageId.offsetTop',PageId.offsetTop);
     window.scrollTo({
-      top: PageId.offsetTop - 100,
+      top: PageId.offsetTop - 80,
       behavior: "smooth",
     });
   }

@@ -17,6 +17,7 @@ export function MainPage() {
   const [curRoadmapPointIndex, setcurRoadmapPointIndex] = useState(1);
   const [curTeamsIndex, setCurTeamsIndex] = useState(2);
   const [teamAvatarListPos, setTeamAvatarListPos] = useState(0);
+  const [weCanDoShowStatus, setWeCanDoShowStatus] = useState(false);
   const introductionList = [
     {
       logo: '/ic_intro_1.png',
@@ -63,6 +64,17 @@ export function MainPage() {
       animationData: wecandoJson,
       assetsPath: '/lottie/we-can-do/images/'
     });
+  }, [])
+  const handleScroll = () => {
+    const wenCanDoDOM = document.querySelector("#weCando");
+    if(window.scrollY>wenCanDoDOM.offsetTop - 100) {
+      setWeCanDoShowStatus(true);
+    } else {
+      setWeCanDoShowStatus(false);
+    }
+  }
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
   }, [])
   const handleRoadPointChange = (index) => {
     setcurRoadmapPointIndex(index);
@@ -116,13 +128,13 @@ export function MainPage() {
             }
           </div>
         </div>
-        <div className={styles["do-wrap"]}>
+        <div className={styles["do-wrap"]} id='weCando'>
           <div className={styles["introduction-title-wrap"]}>
             <div className={styles["introduction-title"]}>What can CryptoGravity do?</div>
             <div className={styles["introduction-line"]}></div>
           </div>
           <div className={styles['introduction-content']}>
-            <div className={styles['to-item']}>
+            <div className={[styles['to-item'], weCanDoShowStatus ? styles['to-item-active'] : ''].join(' ')}>
               <div className={styles['to-item-content']}>
                 <div className={styles['to-item-title']}>
                   NFT sale
@@ -130,7 +142,7 @@ export function MainPage() {
                 <div className={styles['to-item-desc']}>Create an NFT project, and publish your own project official website by configuring the website, NFT upload, and sale rule settings</div>
               </div>
             </div>
-            <div className={[styles['to-item'], styles['to-item-left']].join(' ')}>
+            <div className={[styles['to-item'], styles['to-item-left'], weCanDoShowStatus ? styles['to-item-left-active'] : ''].join(' ')}>
               <div className={[styles['to-item-content'], styles['to-item-content-left']].join(' ')}>
                 <div className={styles['to-item-title']}>
                   DAO official website
@@ -138,7 +150,7 @@ export function MainPage() {
                 <div className={styles['to-item-desc']}>Easily and quickly build your own official website of DAO to gain greater influence for your community</div>
               </div>
             </div>
-            <div className={styles['to-item']}>
+            <div className={[styles['to-item'], weCanDoShowStatus ? styles['to-item-active'] : ''].join(' ')}>
               <div className={styles['to-item-content']}>
                 <div className={styles['to-item-title']}>
                   Donations and Fundraising
@@ -146,7 +158,7 @@ export function MainPage() {
                 <div className={styles['to-item-desc']}>In the absence of a technical team, you can build a donation and fundraising website through CryptoGravity to make investors more recognized</div>
               </div>
             </div>
-            <div className={[styles['to-item'], styles['to-item-left']].join(' ')}>
+            <div className={[styles['to-item'], styles['to-item-left'], weCanDoShowStatus ? styles['to-item-left-active'] : ''].join(' ')}>
               <div className={[styles['to-item-content'], styles['to-item-content-left']].join(' ')}>
                 <div className={styles['to-item-title']}>
                   Open platform
@@ -154,7 +166,7 @@ export function MainPage() {
                 <div className={styles['to-item-desc']}>Provide developers with a complete technology platform, through middleware technology, enable developers to quickly build their own applications with minimal R&D costs</div>
               </div>
             </div>
-            <div className={styles['to-center-image']} ref={weCanDoRef}></div>
+            <div className={[styles['to-center-image'], weCanDoShowStatus ? styles['to-center-image-active'] : '' ].join(' ')} ref={weCanDoRef}></div>
           </div>
         </div>
         <div className={styles["roadmap-wrap"]} id='roadmap'>
