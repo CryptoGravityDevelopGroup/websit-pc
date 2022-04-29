@@ -9,13 +9,19 @@ import wecandoJson from '../../assets/lottie/wecando.json'
 import bg_roadmap_line from '../../assets/bg_roadmap_line.png'
 import roadmap_date_add from '../../assets/ic_blue_add.png'
 import img_tokens from '../../assets/img_tokens.png'
-import bg_team_avatar from '../../assets/bg_team_avatar.png'
+import t1 from '../../assets/1.jpeg'
+import t2 from '../../assets/2.jpeg'
+import t3 from '../../assets/3.jpeg'
+import t4 from '../../assets/4.jpeg'
+import t5 from '../../assets/5.jpeg'
+import t6 from '../../assets/6.jpeg'
+import t7 from '../../assets/7.jpeg'
 
 export function MainPage() {
   const couterRef = useRef(null);
   const weCanDoRef = useRef(null);
   const [curRoadmapPointIndex, setcurRoadmapPointIndex] = useState(1);
-  const [curTeamsIndex, setCurTeamsIndex] = useState(2);
+  const [curTeamsIndex, setCurTeamsIndex] = useState(3);
   const [teamAvatarListPos, setTeamAvatarListPos] = useState(0);
   const [weCanDoShowStatus, setWeCanDoShowStatus] = useState(false);
   const [tokensStatus, setTokensStatusStatus] = useState(false);
@@ -93,7 +99,7 @@ export function MainPage() {
     }
   }
   const handleTeamsRightClick = () => {
-    if(curTeamsIndex + 1 <= 4) {
+    if(curTeamsIndex + 1 <= 6) {
       setCurTeamsIndex(curTeamsIndex + 1)
     }
   }
@@ -270,19 +276,25 @@ export function MainPage() {
           <div className={styles["team-avatar-list-wrap"]}>
             <div className={styles["team-avatar-body-list-wrap"]} style={{'transform':`translate(${teamAvatarListPos}px)`, 'transition':'.3s'}}>
               <div className={[styles["team-avatar-item"], curTeamsIndex === 0 ? styles["team-avatar-item-active"]: ''].join(' ')}>
-                <img className={styles["team-avatar-img"]} src={bg_team_avatar} alt="" />
+                <img className={styles["team-avatar-img"]} src={t1} alt="" />
               </div>
               <div className={[styles["team-avatar-item"], curTeamsIndex === 1 ? styles["team-avatar-item-active"]: ''].join(' ')}>
-                <img className={styles["team-avatar-img"]} src={bg_team_avatar} alt="" />
+                <img className={styles["team-avatar-img"]} src={t2} alt="" />
               </div>
               <div className={[styles["team-avatar-item"], curTeamsIndex === 2 ? styles["team-avatar-item-active"]: ''].join(' ')}>
-                <img className={styles["team-avatar-img"]} src={bg_team_avatar} alt="" />
+                <img className={styles["team-avatar-img"]} src={t3} alt="" />
               </div>
               <div className={[styles["team-avatar-item"], curTeamsIndex === 3 ? styles["team-avatar-item-active"]: ''].join(' ')}>
-                <img className={styles["team-avatar-img"]} src={bg_team_avatar} alt="" />
+                <img className={styles["team-avatar-img"]} src={t4} alt="" />
               </div>
               <div className={[styles["team-avatar-item"], curTeamsIndex === 4 ? styles["team-avatar-item-active"]: ''].join(' ')}>
-                <img className={styles["team-avatar-img"]} src={bg_team_avatar} alt="" />
+                <img className={styles["team-avatar-img"]} src={t5} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 5 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+                <img className={styles["team-avatar-img"]} src={t6} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 6 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+                <img className={styles["team-avatar-img"]} src={t7} alt="" />
               </div>
             </div>
           </div>
@@ -290,7 +302,7 @@ export function MainPage() {
             <div className={styles["teams-btn-left"]} onClick={() => {
               handleTeamsLeftClick();
             }}></div>
-            <div className={styles["teams-menber-desc-wrap"]}>
+            <div className={[styles["teams-menber-desc-wrap"], curTeamsIndex === 0 ? styles["teams-menber-desc-wrap-active"]: ''].join(' ')}>
               <div className={styles["teams-menber-name"]}>Leo</div>
               <div className={styles["teams-menber-name-line"]}></div>
               <div className={styles["teams-menber-desc"]}>
@@ -298,6 +310,60 @@ export function MainPage() {
                 <div>ByteDance Product Supervisor</div>
                 <div>Former Head of Near Public Chain Asia Pacific NFT Art Community</div>
                 <div>7 years working experience in Internet products</div>
+              </div>
+            </div>
+            <div className={[styles["teams-menber-desc-wrap"], curTeamsIndex === 1 ? styles["teams-menber-desc-wrap-active"]: ''].join(' ')}>
+              <div className={styles["teams-menber-name"]}>Scarecrow</div>
+              <div className={styles["teams-menber-name-line"]}></div>
+              <div className={styles["teams-menber-desc"]}>
+                <div>Senior engineer of a company in the top ten public chains by market value</div> 
+                <div>10 years experience in telecom BOSS system</div>
+              </div>
+            </div>
+            <div className={[styles["teams-menber-desc-wrap"], curTeamsIndex === 2 ? styles["teams-menber-desc-wrap-active"]: ''].join(' ')}>
+              <div className={styles["teams-menber-name"]}>TimeLord</div>
+              <div className={styles["teams-menber-name-line"]}></div>
+              <div className={styles["teams-menber-desc"]}>
+                <div>Full-stack engineer expert</div> 
+                <div>TRON Front-End Architect</div>
+                <div>Six-year experience in blockchain development</div>
+              </div>
+            </div>
+            <div className={[styles["teams-menber-desc-wrap"], curTeamsIndex === 3 ? styles["teams-menber-desc-wrap-active"]: ''].join(' ')}>
+              <div className={styles["teams-menber-name"]}>Robert</div>
+              <div className={styles["teams-menber-name-line"]}></div>
+              <div className={styles["teams-menber-desc"]}>
+                <div>Former Baidu senior researcher</div> 
+                <div>Technical director of top3 e-commerce company, responsible for advertising and transaction risk control</div>
+                <div>Eight-year Internet development experience</div>
+                <div>Three-year contract development experience</div>
+              </div>
+            </div>
+            <div className={[styles["teams-menber-desc-wrap"], curTeamsIndex === 4 ? styles["teams-menber-desc-wrap-active"]: ''].join(' ')}>
+              <div className={styles["teams-menber-name"]}>Brough</div>
+              <div className={styles["teams-menber-name-line"]}></div>
+              <div className={styles["teams-menber-desc"]}>
+                <div>Front-end architect</div> 
+                <div>Advanced Development of TRC Chain Games</div>
+                <div>TRON Community Leader</div>
+              </div>
+            </div>
+            <div className={[styles["teams-menber-desc-wrap"], curTeamsIndex === 5 ? styles["teams-menber-desc-wrap-active"]: ''].join(' ')}>
+              <div className={styles["teams-menber-name"]}>Wison</div>
+              <div className={styles["teams-menber-name-line"]}></div>
+              <div className={styles["teams-menber-desc"]}>
+                <div>UI Designer Expert</div> 
+                <div>8 years experience in mobile and pc UI design</div>
+                <div>Participated in many products with millions of users</div>
+              </div>
+            </div>
+            <div className={[styles["teams-menber-desc-wrap"], curTeamsIndex === 6 ? styles["teams-menber-desc-wrap-active"]: ''].join(' ')}>
+              <div className={styles["teams-menber-name"]}>Phoebe</div>
+              <div className={styles["teams-menber-name-line"]}></div>
+              <div className={styles["teams-menber-desc"]}>
+                <div>Master of Engineering in NUS</div> 
+                <div>Independent consultant for more than 3 years</div>
+                <div>Serial entrepreneur</div>
               </div>
             </div>
             <div className={styles["teams-btn-right"]} onClick={() => {

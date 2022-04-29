@@ -364,8 +364,10 @@
 }
 .team-avatar-item {
   margin-right: 60px;
-  width: 190px;
+  min-width: 190px;
   height: 190px;
+  border-radius: 95px;
+  overflow: hidden;
 }
 .team-avatar-item:last-child{
   margin-right: 0;
@@ -375,8 +377,9 @@
   height: 100%;
 }
 .team-avatar-item-active {
-  width: 288px;
+  min-width: 288px;
   height: 288px;
+  border-radius: 144px;
 }
 .teams-btn-left {
   background-image: url('@/assets/ic_team_left.png');
@@ -401,6 +404,10 @@
 
 }
 .teams-menber-desc-wrap {
+  display: none;
+}
+.teams-menber-desc-wrap-active {
+  display: block;
   width: 570px;
 }
 .teams-menber-name {
