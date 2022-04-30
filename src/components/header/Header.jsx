@@ -2,17 +2,16 @@ import React, { useState } from 'react'
 import styles from './Header.module.css'
 import logo from '../../assets/logo.png'
 import userHeader from '../../assets/user-header.png'
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import { getWeb3 } from "@/utils/web3";
 
 export function Header() {
   const navigate = useNavigate();
+  const [curPageKey, setCurPageKey] = useState('Home');
   const [address, setAddress] = useState(null);
-  const location = useLocation();
   const navigation = (key) => {
-    console.log('key', key);
     const PageId = document.querySelector("#" + key);
-    console.log('PageId.offsetTop',PageId.offsetTop);
+    setCurPageKey(key);
     window.scrollTo({
       top: PageId.offsetTop - 80,
       behavior: "smooth",
@@ -31,23 +30,23 @@ export function Header() {
     <div className={styles['app-header']}>
       <img src={logo} alt="logo" className={styles['app-logo']}/>
       <div className={styles['main-menu']}>
-        <div className={styles['menu-item']} onClick={()=>{
+        <div className={[styles['menu-item'], curPageKey === 'home' ? styles['menu-item-active'] : ''].join(' ')} onClick={()=>{
           navigate('/')
           navigation('home')
         }}>Home</div>
-        <div className={styles['menu-item']} onClick={()=>{
+        <div className={[styles['menu-item'], curPageKey === 'introduction' ? styles['menu-item-active'] : ''].join(' ')} onClick={()=>{
           navigate('/')
           navigation('introduction')
         }}>Introduction</div>
-        <div className={styles['menu-item']} onClick={()=>{
+        <div className={[styles['menu-item'], curPageKey === 'roadmap' ? styles['menu-item-active'] : ''].join(' ')} onClick={()=>{
           navigate('/')
           navigation('roadmap')
         }}>Roadmap</div>
-        <div className={styles['menu-item']} onClick={()=>{
+        <div className={[styles['menu-item'], curPageKey === 'tokens' ? styles['menu-item-active'] : ''].join(' ')} onClick={()=>{
           navigate('/')
           navigation('tokens')
         }}>Tokens</div>
-        <div className={styles['menu-item']} onClick={()=>{
+        <div className={[styles['menu-item'], curPageKey === 'teams' ? styles['menu-item-active'] : ''].join(' ')} onClick={()=>{
           navigate('/')
           navigation('teams')
         }}>Teams</div>

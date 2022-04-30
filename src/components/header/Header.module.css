@@ -28,6 +28,9 @@
   font-weight: 400;
   cursor: pointer;
 }
+.menu-item-active {
+  color: #fff;
+}
 .wallet-btn {
   width: 137px;
   height: 46px;

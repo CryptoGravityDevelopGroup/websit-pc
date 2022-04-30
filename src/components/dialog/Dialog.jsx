@@ -11,9 +11,7 @@ export function Dialog(props) {
     {
       dialogStatus ? 
         <div className={styles["app-dialog"]} >
-          <div className={styles["dialog-content"]}>
-            {content}
-          </div>
+          <div className={styles["dialog-content"]} dangerouslySetInnerHTML={{__html: content}}></div>
           <div className={styles["dialog-btn"]} onClick={() => {
               closeDialog()
             }}>
