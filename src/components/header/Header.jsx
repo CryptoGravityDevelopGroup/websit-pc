@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Header.module.css'
 import logo from '../../assets/logo.png'
 import userHeader from '../../assets/user-header.png'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+// import { getWeb3 } from "@/utils/web3";
 
 export function Header() {
   const navigate = useNavigate();
+  const [address, setAddress] = useState(null);
+  const location = useLocation();
   const navigation = (key) => {
     console.log('key', key);
     const PageId = document.querySelector("#" + key);
@@ -14,6 +17,13 @@ export function Header() {
       top: PageId.offsetTop - 80,
       behavior: "smooth",
     });
+  }
+  const connectWallte = async() => {
+    const res = await window.ethereum.request({
+      method: "eth_requestAccounts",
+    });
+    address = res[0].substr(0, 8) + "..." + res[0].substr(-4, 4);
+    window.sessionStorage.setItem("account", res[0]);
   }
   return (
     <>
@@ -42,14 +52,19 @@ export function Header() {
           navigation('teams')
         }}>Teams</div>
         <div className={styles['menu-item']} onClick={()=>{
-          navigate('/docs')
+          // navigate('/docs')
+          window.open('#/docs','_blank')
         }}>Docs</div>
       </div>
-      <div className={styles['wallet-btn']}>
-        Cannect wallet
+      <div className={styles['wallet-btn']} onClick={() => {
+        connectWallte();
+      }}>
+        {address ? address : "Connect wallet" }
       </div>
       <img src={userHeader} alt="userHeader" className={styles['user-header']} onClick={()=>{
-          navigate('/personalcenter')
+          if(address != null)  {
+            navigate('/personalcenter')
+          }
         }} />
     </div>
     </>
