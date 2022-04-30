@@ -2,8 +2,10 @@ import React from 'react'
 import styles from './Header.module.css'
 import logo from '../../assets/logo.png'
 import userHeader from '../../assets/user-header.png'
+import { useNavigate } from 'react-router-dom';
 
 export function Header() {
+  const navigate = useNavigate();
   const navigation = (key) => {
     console.log('key', key);
     const PageId = document.querySelector("#" + key);
@@ -34,7 +36,9 @@ export function Header() {
         <div className={styles['menu-item']} onClick={()=>{
           navigation('teams')
         }}>Teams</div>
-        <div className={styles['menu-item']}>Docs</div>
+        <div className={styles['menu-item']} onClick={()=>{
+          navigate('/docs')
+        }}>Docs</div>
       </div>
       <div className={styles['wallet-btn']}>
         Cannect wallet
