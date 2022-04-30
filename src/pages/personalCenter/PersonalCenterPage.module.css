@@ -19,7 +19,6 @@
 }
 .header {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   height: 33px;
 }
@@ -30,7 +29,6 @@
 }
 .table-tr {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   height: 54px;
   border-top: 1px solid #ccc;

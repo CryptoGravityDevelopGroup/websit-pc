@@ -22,18 +22,23 @@ export function Header() {
       <img src={logo} alt="logo" className={styles['app-logo']}/>
       <div className={styles['main-menu']}>
         <div className={styles['menu-item']} onClick={()=>{
+          navigate('/')
           navigation('home')
         }}>Home</div>
         <div className={styles['menu-item']} onClick={()=>{
+          navigate('/')
           navigation('introduction')
         }}>Introduction</div>
         <div className={styles['menu-item']} onClick={()=>{
+          navigate('/')
           navigation('roadmap')
         }}>Roadmap</div>
         <div className={styles['menu-item']} onClick={()=>{
+          navigate('/')
           navigation('tokens')
         }}>Tokens</div>
         <div className={styles['menu-item']} onClick={()=>{
+          navigate('/')
           navigation('teams')
         }}>Teams</div>
         <div className={styles['menu-item']} onClick={()=>{
@@ -43,7 +48,9 @@ export function Header() {
       <div className={styles['wallet-btn']}>
         Cannect wallet
       </div>
-      <img src={userHeader} alt="userHeader" className={styles['user-header']} />
+      <img src={userHeader} alt="userHeader" className={styles['user-header']} onClick={()=>{
+          navigate('/personalcenter')
+        }} />
     </div>
     </>
   )
