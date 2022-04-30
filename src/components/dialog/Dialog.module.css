@@ -1,0 +1,37 @@
+.app-dialog {
+  width: 448px;
+  border-radius: 20px;
+  opacity: 1;
+  background: rgba(20,20,22,1);
+  box-shadow: 0 64px 64px -48px rgba(31,47,70,0.12);
+  position: fixed;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 32px;
+  box-sizing: border-box;
+}
+.dialog-content {
+  opacity: 1;
+  color: rgba(255,255,255,1);
+  font-size: 20px;
+  min-height: 150px;
+  text-align: center;
+}
+.dialog-btn {
+  width: 384px;
+  height: 48px;
+  border-radius: 10px;
+  opacity: 1;
+  background: rgba(24,111,242,1); 
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.btn-item {
+  color: rgba(255,255,255,1);
+  font-size: 16px;
+}

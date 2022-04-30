@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import styles from './MainPage.module.css';
 import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
+import { Dialog } from '../../components/dialog';
 import startBtn from '../../assets/start-btn.png'
 import lottie from 'lottie-web';
 import mainJson from '../../assets/lottie/cg_main.json';
@@ -27,6 +28,7 @@ export function MainPage() {
   const [tokensStatus, setTokensStatusStatus] = useState(false);
   const [teamsLeftClickStatus, setTeamsLeftClickStatus] = useState(false);
   const [teamsRightClickStatus, setTeamsRightClickStatus] = useState(false);
+  const [startDialogStatus, setStartDialogStatus] = useState(false);
   const introductionList = [
     {
       logo: '/ic_intro_1.png',
@@ -141,7 +143,9 @@ export function MainPage() {
           <div className={styles["cryptoGravity-content"]}>
             <div className={styles["cryptoGravity-title"]}>CryptoGravity</div>
             <div className={styles["cryptoGravity-desc"]}>Building the next-generation intelligent application cloud service platform</div>
-            <div className={styles['start-btn']}>
+            <div className={styles['start-btn']}  onClick={() => {
+                setStartDialogStatus(true);
+              }}>
               <span>Start</span>
               <img className={styles['start-btn-img']} src={startBtn} alt="startBtn" />
             </div>
@@ -428,6 +432,10 @@ export function MainPage() {
         </div>
       </div>
       <Footer/>
+      <Dialog dialogStatus={startDialogStatus} content='At present, we adopt an invitation system to improve the product. You can send us the project information and we will get in touch with you. Email: cryptogravitys@gmail.com'
+      onClose={() => {
+        setStartDialogStatus(false)
+      }}/>
     </>
   )
 }
