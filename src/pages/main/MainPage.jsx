@@ -25,6 +25,8 @@ export function MainPage() {
   const [teamAvatarListPos, setTeamAvatarListPos] = useState(0);
   const [weCanDoShowStatus, setWeCanDoShowStatus] = useState(false);
   const [tokensStatus, setTokensStatusStatus] = useState(false);
+  const [teamsLeftClickStatus, setTeamsLeftClickStatus] = useState(false);
+  const [teamsRightClickStatus, setTeamsRightClickStatus] = useState(false);
   const introductionList = [
     {
       logo: '/ic_intro_1.png',
@@ -94,17 +96,39 @@ export function MainPage() {
     setcurRoadmapPointIndex(index);
   }
   const handleTeamsLeftClick = () => {
-    if(curTeamsIndex - 1 >= 0) {
-      setCurTeamsIndex(curTeamsIndex - 1)
+    if (teamsLeftClickStatus === true) return;
+    setTeamsLeftClickStatus(true);
+    const teamAvatarBodyListWrapDOM = document.querySelector('#teamAvatarBodyListWrap');
+    teamAvatarBodyListWrapDOM.style.transition = 'all 1s';
+    setCurTeamsIndex(curTeamsIndex - 1);
+    if(curTeamsIndex === 0) {
+      setTimeout(() => {
+        teamAvatarBodyListWrapDOM.style.transition = 'all 0s';
+        setCurTeamsIndex(6);
+      }, 1000);
     }
+    setTimeout(() => {
+      setTeamsLeftClickStatus(false);
+    }, 1000);
   }
   const handleTeamsRightClick = () => {
-    if(curTeamsIndex + 1 <= 6) {
-      setCurTeamsIndex(curTeamsIndex + 1)
+    if (teamsRightClickStatus === true) return;
+    setTeamsRightClickStatus(true);
+    const teamAvatarBodyListWrapDOM = document.querySelector('#teamAvatarBodyListWrap');
+    teamAvatarBodyListWrapDOM.style.transition = 'all 1s';
+    setCurTeamsIndex(curTeamsIndex + 1);
+    if(curTeamsIndex === 6) {
+      setTimeout(() => {
+        teamAvatarBodyListWrapDOM.style.transition = 'all 0s';
+        setCurTeamsIndex(0);
+      }, 1000);
     }
+    setTimeout(() => {
+      setTeamsRightClickStatus(false);
+    }, 1000);
   }
   useEffect(() => {
-    setTeamAvatarListPos(0 - (curTeamsIndex-2)*250)
+    setTeamAvatarListPos(0 - (curTeamsIndex-0)*250)
   }, [curTeamsIndex]);
   return (
     <>
@@ -274,7 +298,13 @@ export function MainPage() {
             <div className={styles["introduction-line"]}></div>
           </div>
           <div className={styles["team-avatar-list-wrap"]}>
-            <div className={styles["team-avatar-body-list-wrap"]} style={{'transform':`translate(${teamAvatarListPos}px)`, 'transition':'.3s'}}>
+            <div className={styles["team-avatar-body-list-wrap"]} id="teamAvatarBodyListWrap" style={{'transform':`translate(${teamAvatarListPos}px)`, 'transition':'.3s'}}>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === -2 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+                <img className={styles["team-avatar-img"]} src={t6} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === -1 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+                <img className={styles["team-avatar-img"]} src={t7} alt="" />
+              </div>
               <div className={[styles["team-avatar-item"], curTeamsIndex === 0 ? styles["team-avatar-item-active"]: ''].join(' ')}>
                 <img className={styles["team-avatar-img"]} src={t1} alt="" />
               </div>
@@ -296,12 +326,27 @@ export function MainPage() {
               <div className={[styles["team-avatar-item"], curTeamsIndex === 6 ? styles["team-avatar-item-active"]: ''].join(' ')}>
                 <img className={styles["team-avatar-img"]} src={t7} alt="" />
               </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 7 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+                <img className={styles["team-avatar-img"]} src={t1} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 8 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+                <img className={styles["team-avatar-img"]} src={t2} alt="" />
+              </div>
             </div>
           </div>
           <div className={styles["teams-bottom-wrap"]}>
             <div className={styles["teams-btn-left"]} onClick={() => {
               handleTeamsLeftClick();
             }}></div>
+            <div className={[styles["teams-menber-desc-wrap"], curTeamsIndex === -1 ? styles["teams-menber-desc-wrap-active"]: ''].join(' ')}>
+              <div className={styles["teams-menber-name"]}>Phoebe</div>
+              <div className={styles["teams-menber-name-line"]}></div>
+              <div className={styles["teams-menber-desc"]}>
+                <div>Master of Engineering in NUS</div> 
+                <div>Independent consultant for more than 3 years</div>
+                <div>Serial entrepreneur</div>
+              </div>
+            </div>
             <div className={[styles["teams-menber-desc-wrap"], curTeamsIndex === 0 ? styles["teams-menber-desc-wrap-active"]: ''].join(' ')}>
               <div className={styles["teams-menber-name"]}>Leo</div>
               <div className={styles["teams-menber-name-line"]}></div>
@@ -364,6 +409,16 @@ export function MainPage() {
                 <div>Master of Engineering in NUS</div> 
                 <div>Independent consultant for more than 3 years</div>
                 <div>Serial entrepreneur</div>
+              </div>
+            </div>
+            <div className={[styles["teams-menber-desc-wrap"], curTeamsIndex === 7 ? styles["teams-menber-desc-wrap-active"]: ''].join(' ')}>
+              <div className={styles["teams-menber-name"]}>Leo</div>
+              <div className={styles["teams-menber-name-line"]}></div>
+              <div className={styles["teams-menber-desc"]}>
+                <div>Alibaba Product Expert</div> 
+                <div>ByteDance Product Supervisor</div>
+                <div>Former Head of Near Public Chain Asia Pacific NFT Art Community</div>
+                <div>7 years working experience in Internet products</div>
               </div>
             </div>
             <div className={styles["teams-btn-right"]} onClick={() => {
