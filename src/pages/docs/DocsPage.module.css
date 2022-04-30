@@ -1,0 +1,7 @@
+.docs-wrapper {
+  color: white;
+  padding: 14px;
+}
+.docs-wrapper h2, .docs-wrapper h3, .docs-wrapper h4 {
+  color: white;
+}
