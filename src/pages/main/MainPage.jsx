@@ -28,6 +28,7 @@ export function MainPage() {
   const [tokensStatus, setTokensStatusStatus] = useState(false);
   const [teamsLeftClickStatus, setTeamsLeftClickStatus] = useState(false);
   const [teamsRightClickStatus, setTeamsRightClickStatus] = useState(false);
+  const [teamsAvaterClickStatus, setTeamsAvaterClickStatus] = useState(false);
   const [startDialogStatus, setStartDialogStatus] = useState(false);
   const introductionList = [
     {
@@ -129,8 +130,30 @@ export function MainPage() {
       setTeamsRightClickStatus(false);
     }, 1000);
   }
+  const handleTeamsAvaterClick = (index) => {
+    if (teamsAvaterClickStatus === true) return;
+    setTeamsAvaterClickStatus(true);
+    const teamAvatarBodyListWrapDOM = document.querySelector('#teamAvatarBodyListWrap');
+    teamAvatarBodyListWrapDOM.style.transition = 'all 1s';
+    setCurTeamsIndex(index);
+    if(index <= 0) {
+      setTimeout(() => {
+        teamAvatarBodyListWrapDOM.style.transition = 'all 0s';
+        setCurTeamsIndex(7+index);
+      }, 1000);
+    }
+    if(index >= 6) {
+      setTimeout(() => {
+        teamAvatarBodyListWrapDOM.style.transition = 'all 0s';
+        setCurTeamsIndex(index-7);
+      }, 1000);
+    }
+    setTimeout(() => {
+      setTeamsAvaterClickStatus(false);
+    }, 1100);
+  }
   useEffect(() => {
-    setTeamAvatarListPos(0 - (curTeamsIndex-0)*250)
+    setTeamAvatarListPos(0 - (curTeamsIndex+1)*250)
   }, [curTeamsIndex]);
   return (
     <>
@@ -303,38 +326,70 @@ export function MainPage() {
           </div>
           <div className={styles["team-avatar-list-wrap"]}>
             <div className={styles["team-avatar-body-list-wrap"]} id="teamAvatarBodyListWrap" style={{'transform':`translate(${teamAvatarListPos}px)`, 'transition':'.3s'}}>
-              <div className={[styles["team-avatar-item"], curTeamsIndex === -2 ? styles["team-avatar-item-active"]: ''].join(' ')}>
-                <img className={styles["team-avatar-img"]} src={t6} alt="" />
-              </div>
-              <div className={[styles["team-avatar-item"], curTeamsIndex === -1 ? styles["team-avatar-item-active"]: ''].join(' ')}>
-                <img className={styles["team-avatar-img"]} src={t7} alt="" />
-              </div>
-              <div className={[styles["team-avatar-item"], curTeamsIndex === 0 ? styles["team-avatar-item-active"]: ''].join(' ')}>
-                <img className={styles["team-avatar-img"]} src={t1} alt="" />
-              </div>
-              <div className={[styles["team-avatar-item"], curTeamsIndex === 1 ? styles["team-avatar-item-active"]: ''].join(' ')}>
-                <img className={styles["team-avatar-img"]} src={t2} alt="" />
-              </div>
-              <div className={[styles["team-avatar-item"], curTeamsIndex === 2 ? styles["team-avatar-item-active"]: ''].join(' ')}>
-                <img className={styles["team-avatar-img"]} src={t3} alt="" />
-              </div>
-              <div className={[styles["team-avatar-item"], curTeamsIndex === 3 ? styles["team-avatar-item-active"]: ''].join(' ')}>
-                <img className={styles["team-avatar-img"]} src={t4} alt="" />
-              </div>
-              <div className={[styles["team-avatar-item"], curTeamsIndex === 4 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+            <div className={[styles["team-avatar-item"], curTeamsIndex === -3 ? styles["team-avatar-item-active"]: ''].join(' ')} onClick={() => {
+                handleTeamsAvaterClick(-3);
+              }}>
                 <img className={styles["team-avatar-img"]} src={t5} alt="" />
               </div>
-              <div className={[styles["team-avatar-item"], curTeamsIndex === 5 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === -2 ? styles["team-avatar-item-active"]: ''].join(' ')} onClick={() => {
+                handleTeamsAvaterClick(-2);
+              }}>
                 <img className={styles["team-avatar-img"]} src={t6} alt="" />
               </div>
-              <div className={[styles["team-avatar-item"], curTeamsIndex === 6 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === -1 ? styles["team-avatar-item-active"]: ''].join(' ')} onClick={() => {
+                handleTeamsAvaterClick(-1);
+              }}>
                 <img className={styles["team-avatar-img"]} src={t7} alt="" />
               </div>
-              <div className={[styles["team-avatar-item"], curTeamsIndex === 7 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 0 ? styles["team-avatar-item-active"]: ''].join(' ')} onClick={() => {
+                handleTeamsAvaterClick(0);
+              }}>
                 <img className={styles["team-avatar-img"]} src={t1} alt="" />
               </div>
-              <div className={[styles["team-avatar-item"], curTeamsIndex === 8 ? styles["team-avatar-item-active"]: ''].join(' ')}>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 1 ? styles["team-avatar-item-active"]: ''].join(' ')} onClick={() => {
+                handleTeamsAvaterClick(1);
+              }}>
                 <img className={styles["team-avatar-img"]} src={t2} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 2 ? styles["team-avatar-item-active"]: ''].join(' ')} onClick={() => {
+                handleTeamsAvaterClick(2);
+              }}>
+                <img className={styles["team-avatar-img"]} src={t3} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 3 ? styles["team-avatar-item-active"]: ''].join(' ')} onClick={() => {
+                handleTeamsAvaterClick(3);
+              }}>
+                <img className={styles["team-avatar-img"]} src={t4} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 4 ? styles["team-avatar-item-active"]: ''].join(' ')} onClick={() => {
+                handleTeamsAvaterClick(4);
+              }}>
+                <img className={styles["team-avatar-img"]} src={t5} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 5 ? styles["team-avatar-item-active"]: ''].join(' ')} onClick={() => {
+                handleTeamsAvaterClick(5);
+              }}>
+                <img className={styles["team-avatar-img"]} src={t6} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 6 ? styles["team-avatar-item-active"]: ''].join(' ')} onClick={() => {
+                handleTeamsAvaterClick(6);
+              }}>
+                <img className={styles["team-avatar-img"]} src={t7} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 7 ? styles["team-avatar-item-active"]: ''].join(' ')} onClick={() => {
+                handleTeamsAvaterClick(7);
+              }}>
+                <img className={styles["team-avatar-img"]} src={t1} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 8 ? styles["team-avatar-item-active"]: ''].join(' ')} onClick={() => {
+                handleTeamsAvaterClick(8);
+              }}>
+                <img className={styles["team-avatar-img"]} src={t2} alt="" />
+              </div>
+              <div className={[styles["team-avatar-item"], curTeamsIndex === 9 ? styles["team-avatar-item-active"]: ''].join(' ')} onClick={() => {
+                handleTeamsAvaterClick(9);
+              }}>
+                <img className={styles["team-avatar-img"]} src={t3} alt="" />
               </div>
             </div>
           </div>
