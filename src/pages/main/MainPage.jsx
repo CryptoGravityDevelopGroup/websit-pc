@@ -243,7 +243,7 @@ export function MainPage() {
                 <div className={styles['to-item-desc']}>Easily and quickly build your own official website of DAO to gain greater influence for your community</div>
               </div>
             </div>
-            <div className={[styles['to-item'], weCanDoShowStatus ? styles['to-item-active'] : ''].join(' ')}>
+            <div className={[styles['to-item'], styles['to-item-bottom'], weCanDoShowStatus ? styles['to-item-active'] : ''].join(' ')}>
               <div className={styles['to-item-content']}>
                 <div className={styles['to-item-title']}>
                   Donations and Fundraising
@@ -251,7 +251,7 @@ export function MainPage() {
                 <div className={styles['to-item-desc']}>In the absence of a technical team, you can build a donation and fundraising website through CryptoGravity to make investors more recognized</div>
               </div>
             </div>
-            <div className={[styles['to-item'], styles['to-item-left'], weCanDoShowStatus ? styles['to-item-left-active'] : ''].join(' ')}>
+            <div className={[styles['to-item'], styles['to-item-left'], styles['to-item-left-bottom'],  weCanDoShowStatus ? styles['to-item-left-active'] : ''].join(' ')}>
               <div className={[styles['to-item-content'], styles['to-item-content-left']].join(' ')}>
                 <div className={styles['to-item-title']}>
                   Open platform
