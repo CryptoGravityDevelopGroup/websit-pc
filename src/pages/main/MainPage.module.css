@@ -227,25 +227,21 @@
 .point-1 {
   top: 0;
   left: 122px;
-  opacity: 0;
   transition: 5s;
 }
 .point-2 {
   top: 0;
   left: 363px;
-  opacity: 0;
   transition: 1s;
 }
 .point-3 {
   top: 0;
   left: 604px;
-  opacity: 0;
   transition: 1s;
 }
 .point-4 {
   top: 0;
   left: 847px;
-  opacity: 0;
   transition: 1s;
 }
 .roadmap-date-wrap {

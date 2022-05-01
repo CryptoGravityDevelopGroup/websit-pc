@@ -31,6 +31,7 @@ export function MainPage() {
   const [teamsAvaterClickStatus, setTeamsAvaterClickStatus] = useState(false);
   const [startDialogStatus, setStartDialogStatus] = useState(false);
   const [roadMapStatusStatus, setRoadMapStatusStatus] = useState(false);
+  const [roadPointMouseStatus, setRoadPointMouseStatus] = useState(false);
   const introductionList = [
     {
       logo: '/ic_intro_1.png',
@@ -100,24 +101,24 @@ export function MainPage() {
 
     if(window.scrollY>roadmapDOM.offsetTop - 100) {
       setRoadMapStatusStatus(true);
-      setTimeout(() => {
-        roadmapPoint1DOM.style.opacity = 1;
-      }, 1000);
-      setTimeout(() => {
-        roadmapPoint2DOM.style.opacity = 1;
-      }, 2000);
-      setTimeout(() => {
-        roadmapPoint3DOM.style.opacity = 1;
-      }, 3000);
-      setTimeout(() => {
-        roadmapPoint4DOM.style.opacity = 1;
-      }, 1000);
+      // setTimeout(() => {
+      //   roadmapPoint1DOM.style.opacity = 1;
+      // }, 1000);
+      // setTimeout(() => {
+      //   roadmapPoint2DOM.style.opacity = 1;
+      // }, 2000);
+      // setTimeout(() => {
+      //   roadmapPoint3DOM.style.opacity = 1;
+      // }, 3000);
+      // setTimeout(() => {
+      //   roadmapPoint4DOM.style.opacity = 1;
+      // }, 1000);
     } else {
       setRoadMapStatusStatus(false);
-      roadmapPoint1DOM.style.opacity = 1;
-      roadmapPoint2DOM.style.opacity = 1;
-      roadmapPoint3DOM.style.opacity = 1;
-      roadmapPoint4DOM.style.opacity = 1;
+      // roadmapPoint1DOM.style.opacity = 0;
+      // roadmapPoint2DOM.style.opacity = 0;
+      // roadmapPoint3DOM.style.opacity = 0;
+      // roadmapPoint4DOM.style.opacity = 0;
     }
   }
   useEffect(() => {
@@ -180,9 +181,28 @@ export function MainPage() {
       setTeamsAvaterClickStatus(false);
     }, 1100);
   }
+  const autoAddCurRoadmapPointIndex = () => {
+      let index = (curRoadmapPointIndex + 1);
+      console.log('temp', index);
+      console.log('curRoadmapPointIndex', curRoadmapPointIndex);
+  }
   useEffect(() => {
     setTeamAvatarListPos(0 - (curTeamsIndex+1)*250)
   }, [curTeamsIndex]);
+  useEffect(() => {
+    let timerId = setInterval(() => {
+      setcurRoadmapPointIndex(curRoadmapPointIndex => {
+        if(roadPointMouseStatus == false) {
+          curRoadmapPointIndex = (curRoadmapPointIndex + 1)%5
+          if(curRoadmapPointIndex === 0) {
+            curRoadmapPointIndex = 1;
+          }
+        }
+        return curRoadmapPointIndex;
+      });
+    }, 3000);
+    return () => clearInterval(timerId);
+  }, [roadPointMouseStatus]);
   return (
     <>
       <Header/>
@@ -286,15 +306,28 @@ export function MainPage() {
               <img className={[styles['roadmap-line']].join(' ')} src={bg_roadmap_line} alt="" />
               <div id="roadmap-point-1" className={[styles['roadmap-point'], styles['point-1'], curRoadmapPointIndex === 1 ? styles['roadmap-point-active']: ''].join(' ')} onMouseEnter={()=>{
                 handleRoadPointChange(1);
+                console.log('setRoadPointMouseStatus');
+                setRoadPointMouseStatus(true);
+              }} onMouseLeave={() => {
+                setRoadPointMouseStatus(false);
               }}></div>
               <div id="roadmap-point-2" className={[styles['roadmap-point'], styles['point-2'], curRoadmapPointIndex === 2 ? styles['roadmap-point-active']: ''].join(' ')} onMouseEnter={()=>{
                 handleRoadPointChange(2);
+                setRoadPointMouseStatus(true);
+              }} onMouseLeave={() => {
+                setRoadPointMouseStatus(false);
               }}></div>
               <div id="roadmap-point-3" className={[styles['roadmap-point'], styles['point-3'], curRoadmapPointIndex === 3 ? styles['roadmap-point-active']: ''].join(' ')} onMouseEnter={()=>{
                 handleRoadPointChange(3);
+                setRoadPointMouseStatus(true);
+              }} onMouseLeave={() => {
+                setRoadPointMouseStatus(false);
               }}></div>
               <div id="roadmap-point-4" className={[styles['roadmap-point'], styles['point-4'], curRoadmapPointIndex === 4 ? styles['roadmap-point-active']: ''].join(' ')} onMouseEnter={()=>{
                 handleRoadPointChange(4);
+                setRoadPointMouseStatus(true);
+              }} onMouseLeave={() => {
+                setRoadPointMouseStatus(false);
               }}></div>
             </div>
             <div className={[styles['point-detal-body-wrap']]}>
