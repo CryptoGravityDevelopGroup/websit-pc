@@ -7,7 +7,11 @@
 .docs-wrapper h2, .docs-wrapper h3, .docs-wrapper h4 {
   color: white;
 }
-.CG_charts_PIE, .CG_form_1, .CG_form_2, .CG_form_3 {
-  max-width: 1200px;
+.CG_charts_PIE {
+  max-width: 800px;
   margin: 80px auto;
+}
+.CG_form_1, .CG_form_2, .CG_form_3 {
+  max-width: 1200px;
+  margin: 50px auto;
 }

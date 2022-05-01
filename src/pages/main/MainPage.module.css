@@ -208,7 +208,6 @@
 }
 .roadmap-line {
   width: 100%;
-  opacity: 0;
   transition: all 0.5s;
 }
 .roadmap-line-show {

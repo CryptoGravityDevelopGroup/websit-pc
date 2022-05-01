@@ -147,7 +147,6 @@ export function DocsPage() {
       <div style={{textAlign: 'center'}}>
         <img className={styles['CG_form_2']} src={CG_form_2} alt="" />
       </div>
-      <br />
       <p>
         2. Participate in community governance, such as gaining voting rights on
         major issues of CG community
@@ -177,12 +176,10 @@ export function DocsPage() {
           remaining whitelist qualifications will be moved to a lower-order
           range in sequence.
         </li>
-        <li>
-        <div style={{textAlign: 'center'}}>
+      </ul>
+      <div style={{textAlign: 'center'}}>
         <img className={styles['CG_form_3']} src={CG_form_3} alt="" />
       </div>
-        </li>
-      </ul>
       <p>5.Token destruction</p>
       <ul>
         <li>

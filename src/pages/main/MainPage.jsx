@@ -283,7 +283,7 @@ export function MainPage() {
               </div>
             </div>
             <div className={styles['roadmap-content']}>
-              <img className={[styles['roadmap-line'], roadMapStatusStatus ? styles['roadmap-line-show'] : '' ].join(' ')} src={bg_roadmap_line} alt="" />
+              <img className={[styles['roadmap-line']].join(' ')} src={bg_roadmap_line} alt="" />
               <div id="roadmap-point-1" className={[styles['roadmap-point'], styles['point-1'], curRoadmapPointIndex === 1 ? styles['roadmap-point-active']: ''].join(' ')} onMouseEnter={()=>{
                 handleRoadPointChange(1);
               }}></div>
