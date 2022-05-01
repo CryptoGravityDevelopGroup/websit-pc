@@ -30,6 +30,7 @@ export function MainPage() {
   const [teamsRightClickStatus, setTeamsRightClickStatus] = useState(false);
   const [teamsAvaterClickStatus, setTeamsAvaterClickStatus] = useState(false);
   const [startDialogStatus, setStartDialogStatus] = useState(false);
+  const [roadMapStatusStatus, setRoadMapStatusStatus] = useState(false);
   const introductionList = [
     {
       logo: '/ic_intro_1.png',
@@ -80,6 +81,11 @@ export function MainPage() {
   const handleScroll = () => {
     const wenCanDoDOM = document.querySelector("#weCando");
     const tokensDOM = document.querySelector('#tokens');
+    const roadmapDOM = document.querySelector('#roadmap');
+    const roadmapPoint1DOM = document.querySelector('#roadmap-point-1');
+    const roadmapPoint2DOM = document.querySelector('#roadmap-point-2');
+    const roadmapPoint3DOM = document.querySelector('#roadmap-point-3');
+    const roadmapPoint4DOM = document.querySelector('#roadmap-point-4');
     if(window.scrollY>wenCanDoDOM.offsetTop - 100) {
       setWeCanDoShowStatus(true);
     } else {
@@ -90,6 +96,28 @@ export function MainPage() {
       setTokensStatusStatus(true);
     } else {
       setTokensStatusStatus(false);
+    }
+
+    if(window.scrollY>roadmapDOM.offsetTop - 100) {
+      setRoadMapStatusStatus(true);
+      setTimeout(() => {
+        roadmapPoint1DOM.style.opacity = 1;
+      }, 1000);
+      setTimeout(() => {
+        roadmapPoint2DOM.style.opacity = 1;
+      }, 2000);
+      setTimeout(() => {
+        roadmapPoint3DOM.style.opacity = 1;
+      }, 3000);
+      setTimeout(() => {
+        roadmapPoint4DOM.style.opacity = 1;
+      }, 1000);
+    } else {
+      setRoadMapStatusStatus(false);
+      roadmapPoint1DOM.style.opacity = 1;
+      roadmapPoint2DOM.style.opacity = 1;
+      roadmapPoint3DOM.style.opacity = 1;
+      roadmapPoint4DOM.style.opacity = 1;
     }
   }
   useEffect(() => {
@@ -240,21 +268,6 @@ export function MainPage() {
             <div className={styles["introduction-line"]}></div>
           </div>
           <div className={styles['introduction-content']}>
-            <div className={styles['roadmap-content']}>
-              <img className={styles['roadmap-line']} src={bg_roadmap_line} alt="" />
-              <div className={[styles['roadmap-point'], styles['point-1'], curRoadmapPointIndex === 1 ? styles['roadmap-point-active']: ''].join(' ')} onMouseEnter={()=>{
-                handleRoadPointChange(1);
-              }}></div>
-              <div className={[styles['roadmap-point'], styles['point-2'], curRoadmapPointIndex === 2 ? styles['roadmap-point-active']: ''].join(' ')} onMouseEnter={()=>{
-                handleRoadPointChange(2);
-              }}></div>
-              <div className={[styles['roadmap-point'], styles['point-3'], curRoadmapPointIndex === 3 ? styles['roadmap-point-active']: ''].join(' ')} onMouseEnter={()=>{
-                handleRoadPointChange(3);
-              }}></div>
-              <div className={[styles['roadmap-point'], styles['point-4'], curRoadmapPointIndex === 4 ? styles['roadmap-point-active']: ''].join(' ')} onMouseEnter={()=>{
-                handleRoadPointChange(4);
-              }}></div>
-            </div>
             <div className={styles['roadmap-date-wrap']}>
               <div className={[styles['roadmap-date-item'], styles['roadmap-date-2022Q3']].join(' ')}>
                 Q3 , 2022 <img className={styles['roadmap_date_add']} src={roadmap_date_add} alt="" />
@@ -269,38 +282,55 @@ export function MainPage() {
                 Q2 , 2023 <img className={styles['roadmap_date_add']} src={roadmap_date_add} alt="" />
               </div>
             </div>
-            <div className={[styles['point-detal-wrap'], styles['point-detal-2022Q3'], curRoadmapPointIndex === 1 ? styles['point-detal-active']: ''].join(' ')}>
-              <div className={styles['point-detal-triangle-wrap']}></div>
-              <ul>
-                <li>The main network of CryptoGracity is launched, supporting website construction, contract deployment, and NFT asset sales. </li>
-                <li>Incubate more than 10 high-quality NFT projects. </li>
-                <li>Continuous research and development to increase platform security and stability.</li>
-              </ul>
+            <div className={styles['roadmap-content']}>
+              <img className={[styles['roadmap-line'], roadMapStatusStatus ? styles['roadmap-line-show'] : '' ].join(' ')} src={bg_roadmap_line} alt="" />
+              <div id="roadmap-point-1" className={[styles['roadmap-point'], styles['point-1'], curRoadmapPointIndex === 1 ? styles['roadmap-point-active']: ''].join(' ')} onMouseEnter={()=>{
+                handleRoadPointChange(1);
+              }}></div>
+              <div id="roadmap-point-2" className={[styles['roadmap-point'], styles['point-2'], curRoadmapPointIndex === 2 ? styles['roadmap-point-active']: ''].join(' ')} onMouseEnter={()=>{
+                handleRoadPointChange(2);
+              }}></div>
+              <div id="roadmap-point-3" className={[styles['roadmap-point'], styles['point-3'], curRoadmapPointIndex === 3 ? styles['roadmap-point-active']: ''].join(' ')} onMouseEnter={()=>{
+                handleRoadPointChange(3);
+              }}></div>
+              <div id="roadmap-point-4" className={[styles['roadmap-point'], styles['point-4'], curRoadmapPointIndex === 4 ? styles['roadmap-point-active']: ''].join(' ')} onMouseEnter={()=>{
+                handleRoadPointChange(4);
+              }}></div>
             </div>
-            <div className={[styles['point-detal-wrap'], styles['point-detal-2022Q4'], curRoadmapPointIndex === 2 ? styles['point-detal-active']: ''].join(' ')}>
-              <div className={styles['point-detal-triangle-wrap']}></div>
-              <ul>
-                <li>Upgrade cloud service capabilities in website construction, smart contracts, and risk control security.</li>
-                <li>Establish an intelligent database, and provide the project party with intelligent data analysis capabilities through a visual data model.</li>
-                <li>Expand to explore digital asset types such as music and video.</li>
-              </ul>
-            </div>
-            <div className={[styles['point-detal-wrap'], styles['point-detal-2023Q1'], curRoadmapPointIndex === 3 ? styles['point-detal-active']: ''].join(' ')}>
+            <div className={[styles['point-detal-body-wrap']]}>
+              <div className={[styles['point-detal-wrap'], styles['point-detal-2022Q3'], curRoadmapPointIndex === 1 ? styles['point-detal-active']: ''].join(' ')}>
+                <div className={styles['point-detal-triangle-wrap']}></div>
+                <ul>
+                  <li>The main network of CryptoGracity is launched, supporting website construction, contract deployment, and NFT asset sales. </li>
+                  <li>Incubate more than 10 high-quality NFT projects. </li>
+                  <li>Continuous research and development to increase platform security and stability.</li>
+                </ul>
+              </div>
+              <div className={[styles['point-detal-wrap'], styles['point-detal-2022Q4'], curRoadmapPointIndex === 2 ? styles['point-detal-active']: ''].join(' ')}>
+                <div className={styles['point-detal-triangle-wrap']}></div>
+                <ul>
+                  <li>Upgrade cloud service capabilities in website construction, smart contracts, and risk control security.</li>
+                  <li>Establish an intelligent database, and provide the project party with intelligent data analysis capabilities through a visual data model.</li>
+                  <li>Expand to explore digital asset types such as music and video.</li>
+                </ul>
+              </div>
+              <div className={[styles['point-detal-wrap'], styles['point-detal-2023Q1'], curRoadmapPointIndex === 3 ? styles['point-detal-active']: ''].join(' ')}>
+                <div className={[styles['point-detal-triangle-wrap'], styles['point-detal-triangle-right-wrap']].join(' ')}></div>
+                <ul>
+                  <li>Successfully hatched more than 1,000 high-quality projects, and established extensive and close cooperation with artists, studios, IPs, and project parties around the world.</li>
+                  <li>Become a first-class web3 intelligent application cloud service platform.</li>
+                  <li>Lead the innovation of digital assets in the industry and explore more possibilities.</li>
+                  <li>Hold offline exhibitions</li>
+                </ul>
+              </div>
+              <div className={[styles['point-detal-wrap'], styles['point-detal-2023Q2'],  curRoadmapPointIndex === 4 ? styles['point-detal-active']: ''].join(' ')}>
               <div className={[styles['point-detal-triangle-wrap'], styles['point-detal-triangle-right-wrap']].join(' ')}></div>
-              <ul>
-                <li>Successfully hatched more than 1,000 high-quality projects, and established extensive and close cooperation with artists, studios, IPs, and project parties around the world.</li>
-                <li>Become a first-class web3 intelligent application cloud service platform.</li>
-                <li>Lead the innovation of digital assets in the industry and explore more possibilities.</li>
-                <li>Hold offline exhibitions</li>
-              </ul>
-            </div>
-            <div className={[styles['point-detal-wrap'], styles['point-detal-2023Q2'],  curRoadmapPointIndex === 4 ? styles['point-detal-active']: ''].join(' ')}>
-            <div className={[styles['point-detal-triangle-wrap'], styles['point-detal-triangle-right-wrap']].join(' ')}></div>
-              <ul>
-                <li>Open platform project establishment and launch. </li>
-                <li>Build an intelligent database and provide the project party with intelligent data analysis capabilities through a visual data models.</li>
-                <li>Expand to explore digital asset types such as music and video.</li>
-              </ul>
+                <ul>
+                  <li>Open platform project establishment and launch. </li>
+                  <li>Build an intelligent database and provide the project party with intelligent data analysis capabilities through a visual data models.</li>
+                  <li>Expand to explore digital asset types such as music and video.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

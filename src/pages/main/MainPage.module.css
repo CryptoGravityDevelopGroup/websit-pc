@@ -201,6 +201,11 @@
 }
 .roadmap-line {
   width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.roadmap-line-show {
+  opacity: 1;
 }
 .roadmap-point {
   position: absolute;
@@ -216,24 +221,32 @@
 .point-1 {
   top: 0;
   left: 122px;
+  opacity: 0;
+  transition: 5s;
 }
 .point-2 {
   top: 0;
   left: 363px;
+  opacity: 0;
+  transition: 1s;
 }
 .point-3 {
   top: 0;
   left: 604px;
+  opacity: 0;
+  transition: 1s;
 }
 .point-4 {
   top: 0;
   left: 847px;
+  opacity: 0;
+  transition: 1s;
 }
 .roadmap-date-wrap {
   display: flex;
-  margin-top: 26px;
+  margin-bottom: 14px;
   position: relative;
-  height: 85px;
+  height: 20px;
   width: 1200px;
 }
 .roadmap-date-item {
@@ -245,23 +258,26 @@
 }
 .roadmap-date-2022Q3 {
   top: 0;
-  left: 122px;
+  left: 112px;
 }
 .roadmap-date-2022Q4 {
   top: 0;
-  left: 363px;
+  left: 353px;
 }
 .roadmap-date-2023Q1 {
   top: 0;
-  left: 604px;
+  left: 594px;
 }
 .roadmap-date-2023Q2 {
   top: 0;
-  left: 847px;
+  left: 837px;
 }
 .roadmap_date_add {
   width: 12px;
   height: 12px;
+}
+.point-detal-body-wrap {
+  position: relative;
 }
 .point-detal-wrap {
   width: 676px;
@@ -271,7 +287,7 @@
   background: rgba(5,2,22,1);
   box-shadow: 0 0 20px 0 rgba(84,176,252,0.25);
   border-radius: 5px;
-  position: relative;
+  position: absolute;
   top: 0;
   left: 122px;
   padding: 16px;
@@ -279,13 +295,17 @@
   color: rgba(255,255,255,1);
   font-size: 16px;
   font-weight: 400;
-  display: none;
+  /* display: none; */
+  opacity: 0;
+  margin-top: 44px;
 }
 .point-detal-active {
-  display: block;
+  /* display: block; */
+  opacity: 1;
+  transition: all 0.5s;
 }
 .point-detal-triangle-wrap {
-  width: 10px;
+  /* width: 10px;
   height: 10px;
   position: absolute;
   top: -6px;
@@ -295,27 +315,40 @@
   transform: rotate(45deg);
   border-right: 0;
   border-bottom: 0;
-  background: rgba(5,2,22,1);
+  background: rgba(5,2,22,1); */
+  height: 78px;
+  width: 0px;
+  top: -80px;
+  left: 30px;
+  position: absolute;
+  border: 1px solid #356F8F;
+  background-color: #356F8F;
+  box-shadow: 0 0 20px 0 rgb(84 176 252 / 25%);
 }
 .point-detal-triangle-right-wrap {
   left: auto;
   right: 25px;
 }
 .point-detal-2022Q3 {
-  top: 0;
   left: 122px;
 }
 .point-detal-2022Q4 {
-  top: 0;
-  left: 363px;
+  left: 190px;
+}
+.point-detal-2022Q4 .point-detal-triangle-wrap {
+  left: 203px;
 }
 .point-detal-2023Q1 {
-  top: 0;
-  left: -40px;
+  left: 200px;
+}
+.point-detal-2023Q1 .point-detal-triangle-wrap {
+  left: 434px;
 }
 .point-detal-2023Q2 {
-  top: 0;
   left: 200px;
+}
+.point-detal-2023Q2 .point-detal-triangle-wrap {
+  left: 677px;
 }
 .tokens-wrap {
   height: 494px;
