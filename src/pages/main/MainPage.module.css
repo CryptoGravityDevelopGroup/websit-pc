@@ -302,7 +302,7 @@
 .point-detal-active {
   /* display: block; */
   opacity: 1;
-  transition: all 0.5s;
+  transition: opacity 1s;
 }
 .point-detal-triangle-wrap {
   /* width: 10px;
