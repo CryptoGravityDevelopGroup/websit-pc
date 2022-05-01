@@ -405,6 +405,11 @@
   height: 190px;
   border-radius: 95px;
   overflow: hidden;
+  opacity:0.5;
+  background-image: url('@/assets/bg_team_avatar.png');
+  background-size: contain;
+  padding: 50px;
+  box-sizing: border-box;
 }
 .team-avatar-item:last-child{
   margin-right: 0;
@@ -412,11 +417,13 @@
 .team-avatar-img{
   width: 100%;
   height: 100%;
+  border-radius: 50%;
 }
 .team-avatar-item-active {
   min-width: 288px;
   height: 288px;
   border-radius: 144px;
+  opacity:1;
 }
 .teams-btn-left {
   background-image: url('@/assets/ic_team_left.png');
