@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from './Header.module.css'
 import logo from '../../assets/logo.png'
 import userHeader from '../../assets/user-header.png'
@@ -24,6 +24,31 @@ export function Header() {
     address = res[0].substr(0, 8) + "..." + res[0].substr(-4, 4);
     window.sessionStorage.setItem("account", res[0]);
   }
+  const handleScroll = () => {
+    const homeDOM = document.querySelector("#home");
+    const introductionDOM = document.querySelector("#introduction");
+    const roadmapDOM = document.querySelector('#roadmap');
+    const tokensDOM = document.querySelector('#tokens');
+    const teamsDOM = document.querySelector('#teams');
+    if(window.scrollY>homeDOM.offsetTop - 180) {
+      setCurPageKey('home')
+    }
+    if(window.scrollY>introductionDOM.offsetTop - 180) {
+      setCurPageKey('introduction')
+    }
+    if(window.scrollY>roadmapDOM.offsetTop - 180) {
+      setCurPageKey('roadmap')
+    }
+    if(window.scrollY>tokensDOM.offsetTop - 180) {
+      setCurPageKey('tokens')
+    }
+    if(window.scrollY>teamsDOM.offsetTop - 180) {
+      navigation('teams')
+    }
+  }
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+  }, [])
   return (
     <>
     <div style={{height:'80px'}}></div>
