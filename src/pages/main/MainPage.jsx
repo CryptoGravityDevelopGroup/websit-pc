@@ -447,7 +447,7 @@ export function MainPage() {
               </div>
             </div>
             <div className={[styles["teams-menber-desc-wrap"], curTeamsIndex === 1 ? styles["teams-menber-desc-wrap-active"]: ''].join(' ')}>
-              <div className={styles["teams-menber-name"]}>Scarecrow</div>
+              <div className={styles["teams-menber-name"]}>Marshall.MA</div>
               <div className={styles["teams-menber-name-line"]}></div>
               <div className={styles["teams-menber-desc"]}>
                 <div>Senior engineer of a company in the top ten public chains by market value</div> 
