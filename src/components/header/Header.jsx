@@ -32,7 +32,7 @@ export function Header() {
     const roadmapDOM = document.querySelector('#roadmap');
     const tokensDOM = document.querySelector('#tokens');
     const teamsDOM = document.querySelector('#teams');
-    // if(!homeDOM) return;
+    if(!homeDOM) return;
     if(window.scrollY>homeDOM.offsetTop - 180) {
       setCurPageKey('home')
     }
