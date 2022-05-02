@@ -94,7 +94,7 @@
   margin-bottom: 30px;
 }
 .introduction-item:hover {
-  border: 1px solid rgba(0.3607843220233917, 0.7333333492279053, 1, 1);
+  /* border: 1px solid rgba(0.3607843220233917, 0.7333333492279053, 1, 1); */
   background: linear-gradient(225deg, rgba(49,95,139,1) 0%, rgba(16,50,126,1) 100%);
   box-shadow: 0 0 30px 0 rgba(84,176,252,0.35);
 }
@@ -408,7 +408,7 @@
   opacity:0.5;
   background-image: url('@/assets/bg_team_avatar.png');
   background-size: contain;
-  padding: 50px;
+  padding: 30px;
   box-sizing: border-box;
 }
 .team-avatar-item:last-child{
