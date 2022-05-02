@@ -213,7 +213,7 @@ export function MainPage() {
           </div>
           <div className={styles["cryptoGravity-content"]}>
             <div className={styles["cryptoGravity-title"]}>CryptoGravity</div>
-            <div className={styles["cryptoGravity-desc"]}>Building the next-generation intelligent application cloud service platform</div>
+            <div className={styles["cryptoGravity-desc"]}>Build your web3 application without coding</div>
             <div className={styles['start-btn']}  onClick={() => {
                 setStartDialogStatus(true);
               }}>
@@ -334,7 +334,7 @@ export function MainPage() {
               <div className={[styles['point-detal-wrap'], styles['point-detal-2022Q3'], curRoadmapPointIndex === 1 ? styles['point-detal-active']: ''].join(' ')}>
                 <div className={styles['point-detal-triangle-wrap']}></div>
                 <ul>
-                  <li>The main network of CryptoGracity is launched, supporting website construction, contract deployment, and NFT asset sales. </li>
+                  <li>Launch the main network of CryptoGracity, supporting website construction, contract deployment, and NFT asset sales.</li>
                   <li>Incubate more than 10 high-quality NFT projects. </li>
                   <li>Continuous research and development to increase platform security and stability.</li>
                 </ul>
@@ -350,7 +350,7 @@ export function MainPage() {
               <div className={[styles['point-detal-wrap'], styles['point-detal-2023Q1'], curRoadmapPointIndex === 3 ? styles['point-detal-active']: ''].join(' ')}>
                 <div className={[styles['point-detal-triangle-wrap'], styles['point-detal-triangle-right-wrap']].join(' ')}></div>
                 <ul>
-                  <li>Successfully hatched more than 1,000 high-quality projects, and established extensive and close cooperation with artists, studios, IPs, and project parties around the world.</li>
+                  <li>Hatch more than 1,000 high-quality projects, and establish extensive and close cooperation with artists, studios, IPs, and project parties around the world.</li>
                   <li>Become a first-class web3 intelligent application cloud service platform.</li>
                   <li>Lead the innovation of digital assets in the industry and explore more possibilities.</li>
                   <li>Hold offline exhibitions</li>
