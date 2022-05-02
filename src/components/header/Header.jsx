@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import styles from './Header.module.css'
 import logo from '../../assets/logo.png'
 import userHeader from '../../assets/user-header.png'
+import imgDefaultUser from '../../assets/img_default_user.png'
 import { useNavigate } from 'react-router-dom';
-// import { getWeb3 } from "@/utils/web3";
+import { getWeb3 } from "@/utils/web3";
 
 export function Header() {
   const navigate = useNavigate();
@@ -21,7 +22,8 @@ export function Header() {
     const res = await window.ethereum.request({
       method: "eth_requestAccounts",
     });
-    address = res[0].substr(0, 8) + "..." + res[0].substr(-4, 4);
+    let tmpeAddress = res[0].substr(0, 8) + "..." + res[0].substr(-4, 4);
+    setAddress(tmpeAddress);
     window.sessionStorage.setItem("account", res[0]);
   }
   const handleScroll = () => {
@@ -30,6 +32,7 @@ export function Header() {
     const roadmapDOM = document.querySelector('#roadmap');
     const tokensDOM = document.querySelector('#tokens');
     const teamsDOM = document.querySelector('#teams');
+    // if(!homeDOM) return;
     if(window.scrollY>homeDOM.offsetTop - 180) {
       setCurPageKey('home')
     }
@@ -49,6 +52,10 @@ export function Header() {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
   }, [])
+  useEffect(() => {
+    connectWallte();
+    handleScroll();
+  })
   return (
     <>
     <div style={{height:'80px'}}></div>
@@ -85,7 +92,7 @@ export function Header() {
       }}>
         {address ? address : "Connect wallet" }
       </div>
-      <img src={userHeader} alt="userHeader" className={styles['user-header']} onClick={()=>{
+      <img src={address ? imgDefaultUser : userHeader } alt="userHeader" className={styles['user-header']} onClick={()=>{
           if(address != null)  {
             navigate('/personalcenter')
           }
