@@ -473,7 +473,7 @@ export function MainPage() {
               <div className={styles["teams-menber-name"]}>Leo</div>
               <div className={styles["teams-menber-name-line"]}></div>
               <div className={styles["teams-menber-desc"]}>
-                <div>Alibaba Product Expert</div> 
+                <div>Product expert of China's top 2 e-commerce company</div> 
                 <div>ByteDance Product Supervisor</div>
                 <div>Former Head of Near Public Chain Asia Pacific NFT Art Community</div>
                 <div>7 years working experience in Internet products</div>
@@ -500,7 +500,7 @@ export function MainPage() {
               <div className={styles["teams-menber-name"]}>Robert</div>
               <div className={styles["teams-menber-name-line"]}></div>
               <div className={styles["teams-menber-desc"]}>
-                <div>Former Baidu senior researcher</div> 
+                <div>Senior researcher of China top2 search engine company</div> 
                 <div>Technical director of top3 e-commerce company, responsible for advertising and transaction risk control</div>
                 <div>Eight-year Internet development experience</div>
                 <div>Three-year contract development experience</div>
@@ -537,7 +537,7 @@ export function MainPage() {
               <div className={styles["teams-menber-name"]}>Leo</div>
               <div className={styles["teams-menber-name-line"]}></div>
               <div className={styles["teams-menber-desc"]}>
-                <div>Alibaba Product Expert</div> 
+                <div>Product expert of China's top 2 e-commerce company</div> 
                 <div>ByteDance Product Supervisor</div>
                 <div>Former Head of Near Public Chain Asia Pacific NFT Art Community</div>
                 <div>7 years working experience in Internet products</div>
