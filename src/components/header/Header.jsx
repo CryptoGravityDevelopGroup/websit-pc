@@ -19,12 +19,16 @@ export function Header() {
     });
   }
   const connectWallte = async() => {
-    const res = await window.ethereum.request({
-      method: "eth_requestAccounts",
-    });
-    let tmpeAddress = res[0].substr(0, 8) + "..." + res[0].substr(-4, 4);
-    setAddress(tmpeAddress);
-    window.sessionStorage.setItem("account", res[0]);
+    if(window.ethereum) {
+      const res = await window.ethereum.request({
+        method: "eth_requestAccounts",
+      });
+      let tmpeAddress = res[0].substr(0, 8) + "..." + res[0].substr(-4, 4);
+      setAddress(tmpeAddress);
+      window.sessionStorage.setItem("account", res[0]);
+    } else {
+      window.open('https://metamask.io/');
+    }
   }
   const handleScroll = () => {
     const homeDOM = document.querySelector("#home");
