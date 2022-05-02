@@ -36,11 +36,11 @@ export function MainPage() {
     {
       logo: '/ic_intro_1.png',
       title: 'Website Building',
-      des: 'Through simple page interaction, you can build your own project website and deploy domain name'
+      des: 'Build project website and deploy domain name through simple page interaction'
     },{
       logo: '/ic_intro_2.png',
       title: 'Smart Contract',
-      des: 'One-stop smart contract deployment and setup, easy to realize without code'
+      des: 'Easy to realize one-stop smart contract deployment and setup without code'
     },{
       logo: '/ic_intro_3.png',
       title: 'Digital Asset Sale',
@@ -52,7 +52,7 @@ export function MainPage() {
     },{
       logo: '/ic_intro_5.png',
       title: 'Database',
-      des: 'Provide project parties with complete project data models and data storage function, and help them to better understand their project by visualizing the data'
+      des: 'Provide complete project data models and data storage function to help you to better understand your project by visualizing the data'
     },{
       logo: '/ic_intro_6.png',
       title: 'Risk Control',
