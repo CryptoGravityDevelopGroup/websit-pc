@@ -46,7 +46,7 @@ export function Header() {
       setCurPageKey('tokens')
     }
     if(window.scrollY>teamsDOM.offsetTop - 180) {
-      navigation('teams')
+      setCurPageKey('teams')
     }
   }
   useEffect(() => {
