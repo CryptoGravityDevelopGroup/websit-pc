@@ -43,7 +43,11 @@ export function Footer() {
           </span>
         </span>
       </div>
-      <Dialog dialogStatus={developersDialogStatus} content='Currently only available to developers'
+      <Dialog dialogStatus={developersDialogStatus} content='
+        <div style="text-align:center">
+          Currently only available to developers
+        </div>
+      '
         onClose={() => {
           setDevelopersDialogStatus(false)
         }}/>
