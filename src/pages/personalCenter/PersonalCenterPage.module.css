@@ -7,6 +7,7 @@
   flex-grow: 1;
   display: flex;
   justify-content: center;
+  height: calc(100vh - 80px);
 }
 .table-wrap {
   width: 1200px;
@@ -60,4 +61,22 @@
   cursor: pointer;
   margin-top: 30px;
   margin: 30px auto 0;
+}
+.nodata-wrap {
+  margin: auto;
+  margin-top: 180px;
+}
+.nodata-wrap img {
+  width: 122px;
+  height: 100px;
+}
+.nodata-copywriting {
+  text-align: center;
+  line-height: 26px;
+  height: 26px;
+  opacity: 1;
+  color: rgba(255,255,255,1);
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 9px;
 }
