@@ -550,7 +550,8 @@ export function MainPage() {
         </div>
       </div>
       <Footer/>
-      <Dialog dialogStatus={startDialogStatus} content='At present, we adopt an invitation system to improve the product. You can send us the project information and we will get in touch with you.<br/> Email: cryptogravitys@gmail.com'
+      <Dialog dialogStatus={startDialogStatus} content={
+        <span>At present, we adopt an invitation system to improve the product. You can send us the project information and we will get in touch with you.<br/> Email: cryptogravitys@gmail.com</span>}
       onClose={() => {
         setStartDialogStatus(false)
       }}/>
