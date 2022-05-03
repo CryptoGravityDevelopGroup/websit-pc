@@ -1,10 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './PersonalCenterPage.module.css'
 import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
+import { Dialog } from '../../components/dialog';
 import emptyImgGray from '@/assets/empty-img-gray.png'
+import ic_side_twitter from '@/assets/ic_side_twitter.png';
 
 export function PersonalCenterPage() {
+  const [developersDialogStatus, setDevelopersDialogStatus] = useState(false);
+  const openUrl = (url) => {
+    if (url) {
+      window.open(url);
+      return;
+    }
+  };
   return (
       <div className={styles['personal-center-wrap']}>
         <Header/>
@@ -12,6 +21,9 @@ export function PersonalCenterPage() {
           <div className={styles['nodata-wrap']}>
             <img src={emptyImgGray} alt="" />
             <div className={styles['nodata-copywriting']}>No Data</div>
+            <div className={styles['buy-tokens-btn']}  onClick={() => {
+            setDevelopersDialogStatus(true);
+          }}>Buy tokens</div>
           </div>
           {/* <div>
             <div className={styles['table-wrap']}>
@@ -73,6 +85,24 @@ export function PersonalCenterPage() {
           </div> */}
         </div>
         {/* <Footer/> */}
+        <Dialog dialogStatus={developersDialogStatus} content={
+          <>
+            <div style={{textAlign:'center'}}>
+              Follow the official twitter for the latest token developments
+            </div>
+            <div style={{textAlign:'center'}}>
+              <span onClick={() => {
+                openUrl('https://twitter.com/Gravity_NFTs');
+              }}>
+                <img style={{width: '24px', height: '24px', verticalAlign: 'middle', marginRight: '10px'}} src={ic_side_twitter} alt="" />
+                <span style={{textDecoration: 'underline'}}>Twitter</span>
+              </span>
+            </div>
+          </>
+        }
+        onClose={() => {
+          setDevelopersDialogStatus(false)
+        }}/>
       </div>
   )
 }

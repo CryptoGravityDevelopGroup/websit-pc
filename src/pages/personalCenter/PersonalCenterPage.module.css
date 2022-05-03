@@ -80,3 +80,15 @@
   font-weight: 400;
   margin-top: 9px;
 }
+.buy-tokens-btn {
+  width: 133px;
+  height: 46px;
+  border-radius: 10px;
+  opacity: 1;
+  background: rgba(24,111,242,1);
+  line-height: 46px;
+  text-align: center;
+  cursor: pointer;
+  color: #ffff;
+  margin-top: 20px;
+}
