@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/static/css/main.95af9ead.css",
+    "main.js": "/static/js/main.f80dd979.js",
+    "static/media/img_tokens.png": "/static/media/img_tokens.dbad30b2486d52bf84dc.png",
+    "static/media/CG_charts_PIE.png": "/static/media/CG_charts_PIE.c195e7acf0b632e09889.png",
+    "static/media/7.jpeg": "/static/media/7.da98bab4c755bf2c92da.jpeg",
+    "static/media/CG_form_1.png": "/static/media/CG_form_1.ad010f39f80689f91d3f.png",
+    "static/media/5.jpeg": "/static/media/5.11c744724e984eee035c.jpeg",
+    "static/media/3.jpeg": "/static/media/3.ce8d18499372dc6f2542.jpeg",
+    "static/media/1.jpeg": "/static/media/1.13695b2a3aef786303f5.jpeg",
+    "static/media/6.jpeg": "/static/media/6.b37b1d41bb38b7a4b293.jpeg",
+    "static/media/2.jpeg": "/static/media/2.ad8b08f683692afc4160.jpeg",
+    "static/media/4.jpeg": "/static/media/4.cd0e25820884a64545db.jpeg",
+    "static/media/CG_form_2.png": "/static/media/CG_form_2.41733f248b634e1259de.png",
+    "static/media/img_cwd_1.png": "/static/media/img_cwd_1.83b132b4c81ef585af4b.png",
+    "static/media/img_cwd_2.png": "/static/media/img_cwd_2.a98f7b9635f49fb93c2c.png",
+    "static/media/img_cwd_3.png": "/static/media/img_cwd_3.c78ad774f8488b127081.png",
+    "static/media/img_cwd_4.png": "/static/media/img_cwd_4.46eb61ce0adf3341a24a.png",
+    "static/media/CG_form_3.png": "/static/media/CG_form_3.52acab1e4bea9185cce7.png",
+    "static/media/bg_team_avatar.png": "/static/media/bg_team_avatar.436d353eede8e311f3ed.png",
+    "static/media/ic_roadmap_dot_sel.png": "/static/media/ic_roadmap_dot_sel.7dee7841e8513396a726.png",
+    "static/media/ic_roadmap_dot_nol.png": "/static/media/ic_roadmap_dot_nol.ea16229fdabab14c94b8.png",
+    "static/media/ic_team_left.png": "/static/media/ic_team_left.1f53bd38f8c42a264138.png",
+    "static/media/ic_team_right.png": "/static/media/ic_team_right.62c538a0dc8cd2debe7b.png",
+    "static/media/bg_roadmap_line.png": "/static/media/bg_roadmap_line.7f6d77c558be359e2c3d.png",
+    "static/media/logo.png": "/static/media/logo.fae218fed32369824b58.png",
+    "static/media/empty-img-gray.png": "/static/media/empty-img-gray.427b0fcd6b8528bd1724.png",
+    "index.html": "/index.html",
+    "main.95af9ead.css.map": "/static/css/main.95af9ead.css.map",
+    "main.f80dd979.js.map": "/static/js/main.f80dd979.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.95af9ead.css",
+    "static/js/main.f80dd979.js"
+  ]
+}
