@@ -3,6 +3,7 @@ import styles from './Footer.module.css';
 import ic_side_discord from '@/assets/ic_side_discord.png';
 import ic_side_tel from '@/assets/ic_side_tel.png';
 import ic_side_twitter from '@/assets/ic_side_twitter.png';
+import MediumLogo from '@/assets/MediumLogo.png';
 import { Dialog } from '../../components/dialog';
 import { useNavigate } from 'react-router-dom';
 
@@ -27,19 +28,24 @@ export function Footer() {
             openUrl('https://twitter.com/Gravity_NFTs');
           }}>
             <img src={ic_side_twitter} alt="" />
-            <span>Twitter</span>
+            {/* <span>Twitter</span> */}
           </span>
           <span className={styles["contact-item-wrap"]} onClick={() => {
             setDevelopersDialogStatus(true);
           }} >
             <img src={ic_side_discord} alt="" />
-            <span>discord</span>
+            {/* <span>discord</span> */}
+          </span>
+          <span className={styles["contact-item-wrap"]}  onClick={() => {
+            openUrl('https://medium.com/@cryptogravitys');
+          }}>
+            <img src={MediumLogo} alt="" />
           </span>
           <span className={styles["contact-item-wrap"]}  onClick={() => {
             setDevelopersDialogStatus(true);
           }}>
             <img src={ic_side_tel} alt="" />
-            <span>Telogram</span>
+            {/* <span>Telogram</span> */}
           </span>
         </span>
       </div>

@@ -95,7 +95,7 @@ export function PersonalCenterPage() {
                 openUrl('https://twitter.com/Gravity_NFTs');
               }}>
                 <img style={{width: '24px', height: '24px', verticalAlign: 'middle', marginRight: '10px'}} src={ic_side_twitter} alt="" />
-                <span style={{textDecoration: 'underline'}}>Twitter</span>
+                {/* <span style={{textDecoration: 'underline'}}>Twitter</span> */}
               </span>
             </div>
           </>
