@@ -588,6 +588,19 @@ export function MainPage() {
       onClose={() => {
         setStartDialogStatus(false)
       }}/>
+      <div className={styles['token-subscription-dialog-wrap']}>
+        <div className={styles['token-subscription-dialog-content']}>
+          If you have not supplemented the materials, you will not be able to subscribe for the registration quota
+        </div>
+        <div className={styles['token-subscription-btns-group']}>
+          <div className={styles['token-subscription-dialog-cancel-btn']}>
+            cancel
+          </div>
+          <div className={styles['token-subscription-dialog-supplement-btn']}>
+            supplement materials
+          </div>
+        </div>
+      </div>
     </>
   )
 }

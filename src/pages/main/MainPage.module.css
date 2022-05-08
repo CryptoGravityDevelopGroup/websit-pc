@@ -465,6 +465,57 @@
   font-weight: 700;
   margin: 20px;
 }
+.token-subscription-dialog-wrap {
+  width: 496px;
+  height: 234px;
+  border-radius: 20px;
+  opacity: 1;
+  background: rgba(20,20,22,1);
+  box-shadow: 0 64px 64px -48px rgba(31,47,70,0.12);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 32px;
+  box-sizing: border-box;
+}
+.token-subscription-dialog-content {
+  color: rgba(255,255,255,1);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 35px;
+}
+.token-subscription-dialog-cancel-btn {
+  width: 208px;
+  height: 48px;
+  border-radius: 10px;
+  opacity: 1;
+  border: 2px solid rgba(0.208767369389534, 0.2251005470752716, 0.2708333432674408, 1);
+  color: rgba(252,252,253,1);
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+}
+.token-subscription-dialog-supplement-btn {
+  width: 208px;
+  height: 48px;
+  border-radius: 10px;
+  opacity: 1;
+  background: rgba(24,111,242,1);
+  color: rgba(255,255,255,1);
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+}
+.token-subscription-btns-group {
+  display: flex;
+  margin-top: 32px;
+  justify-content: space-between;
+}
 .teams-wrap {
   width: 1288px;
   margin-left: auto;
