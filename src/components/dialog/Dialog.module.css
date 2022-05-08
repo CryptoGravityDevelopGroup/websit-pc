@@ -1,3 +1,10 @@
+.modal-mask {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  height: 100%;
+  background-color: #00000073;
+}
 .app-dialog {
   width: 448px;
   border-radius: 20px;
@@ -11,6 +18,7 @@
   transform: translate(-50%, -50%);
   padding: 32px;
   box-sizing: border-box;
+  z-index: 1000;
 }
 .dialog-content {
   opacity: 1;
@@ -19,12 +27,14 @@
   /* min-height: 150px; */
   line-height: 35px;
 }
+.btn-groups-wrap {
+  display: flex;
+}
 .dialog-btn {
   width: 384px;
   height: 48px;
   border-radius: 10px;
   opacity: 1;
-  background: rgba(24,111,242,1); 
   margin-top: 32px;
   display: flex;
   align-items: center;
@@ -34,4 +44,11 @@
 .btn-item {
   color: rgba(255,255,255,1);
   font-size: 16px;
+}
+.ok-btn {
+  background: rgba(24,111,242,1); 
+}
+.cancel-btn {
+  margin-right: 16px;
+  border: 2px solid #353945;
 }

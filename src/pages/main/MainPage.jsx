@@ -32,6 +32,7 @@ export function MainPage() {
   const [startDialogStatus, setStartDialogStatus] = useState(false);
   const [roadMapStatusStatus, setRoadMapStatusStatus] = useState(false);
   const [roadPointMouseStatus, setRoadPointMouseStatus] = useState(false);
+  const [tokenSubscriptionDialogStatus, setTokenSubscriptionDialogStatus] = useState(false);
   const introductionList = [
     {
       logo: '/ic_intro_1.png',
@@ -395,7 +396,9 @@ export function MainPage() {
                 <div className={styles['additional-materials-btn']}>
                   Additional materials
                 </div>
-                <div className={styles['sign-up-btn']}>
+                <div className={styles['sign-up-btn']} onClick={() => {
+                  setTokenSubscriptionDialogStatus(true)
+                }}>
                   Sign up
                 </div>
               </div>
@@ -589,19 +592,17 @@ export function MainPage() {
           setStartDialogStatus(false)
         }}
       />
-      {/* <div className={styles['token-subscription-dialog-wrap']}>
-        <div className={styles['token-subscription-dialog-content']}>
-          If you have not supplemented the materials, you will not be able to subscribe for the registration quota
-        </div>
-        <div className={styles['token-subscription-btns-group']}>
-          <div className={styles['token-subscription-dialog-cancel-btn']}>
-            cancel
-          </div>
-          <div className={styles['token-subscription-dialog-supplement-btn']}>
-            supplement materials
-          </div>
-        </div>
-      </div> */}
+      <Dialog dialogStatus={tokenSubscriptionDialogStatus} content={
+        <span>If you have not supplemented the materials, you will not be able to subscribe for the registration quota</span>}
+        onOk={() => {
+          setTokenSubscriptionDialogStatus(false)
+        }}
+        okBtnContent = 'supplement materials'
+        onCancel = {() => {
+          setTokenSubscriptionDialogStatus(false)
+        }}
+        cancelBtnContent = 'cancel'
+      />
     </>
   )
 }
