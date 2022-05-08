@@ -100,9 +100,10 @@ export function PersonalCenterPage() {
             </div>
           </>
         }
-        onClose={() => {
+        onOk={() => {
           setDevelopersDialogStatus(false)
-        }}/>
+        }}
+        />
       </div>
   )
 }

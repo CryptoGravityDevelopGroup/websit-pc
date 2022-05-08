@@ -54,7 +54,7 @@ export function Footer() {
             Currently only available to developers
           </div>
         }
-        onClose={() => {
+        onOk={() => {
           setDevelopersDialogStatus(false)
         }}/>
     </div>

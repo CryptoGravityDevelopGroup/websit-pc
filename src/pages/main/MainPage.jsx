@@ -585,10 +585,11 @@ export function MainPage() {
       <Footer/>
       <Dialog dialogStatus={startDialogStatus} content={
         <span>At present, we adopt an invitation system to improve the product. You can send us the project information and we will get in touch with you.<br/> Email: cryptogravitys@gmail.com</span>}
-      onClose={() => {
-        setStartDialogStatus(false)
-      }}/>
-      <div className={styles['token-subscription-dialog-wrap']}>
+        onOk={() => {
+          setStartDialogStatus(false)
+        }}
+      />
+      {/* <div className={styles['token-subscription-dialog-wrap']}>
         <div className={styles['token-subscription-dialog-content']}>
           If you have not supplemented the materials, you will not be able to subscribe for the registration quota
         </div>
@@ -600,7 +601,7 @@ export function MainPage() {
             supplement materials
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
