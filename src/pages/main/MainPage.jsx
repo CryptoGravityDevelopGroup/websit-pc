@@ -367,7 +367,7 @@ export function MainPage() {
             </div>
           </div>
         </div>
-        <div className={styles["tokens-wrap"]} id='tokens'>
+        {/* <div className={styles["tokens-wrap"]} id='tokens'>
           <div className={styles["introduction-title-wrap"]}>
             <div className={styles["introduction-title"]}>Tokens</div>
             <div className={styles["introduction-line"]}></div>
@@ -380,6 +380,39 @@ export function MainPage() {
               </div>
             </div>
             <img className={[styles['img-tokens'], tokensStatus ? styles['imgs-token-active'] : ''].join(' ')} src={img_tokens} alt="" />
+          </div>
+        </div> */}
+        <div className={styles["tokens-subscription-wrap"]} id='tokens'>
+          <div className={styles["introduction-title-wrap"]}>
+            <div className={styles["introduction-title"]}>Token subscription</div>
+            <div className={styles["introduction-line"]}></div>
+          </div>
+          <div className={styles['introduction-subscription-content']}>
+            <img className={[styles['img-tokens-subscription']].join(' ')} src={img_tokens} alt="" />
+            <div className={styles['tokens-confrim-conetnt-wrap']}>
+              <div>We will confirm the subscription of early supporters through the registration lottery. Before participating in the registration, supplementary information is required, and some operations are required to prove that it is not a robot.</div>
+              <div className={styles['tokens-confrim-conetnt-button-wrap']}>
+                <div className={styles['additional-materials-btn']}>
+                  Additional materials
+                </div>
+                <div className={styles['sign-up-btn']}>
+                  Sign up
+                </div>
+              </div>
+            </div>
+            <div className={styles['subscription-tips']} style={{marginBottom: '10px'}}>
+              We will use 5% of Tokens for early feedback to project supporters, and the funds obtained will be used for product research and development, marketing and other expenses. If you have questions about our token economy, welcome to check out our docs to get to know us.
+            </div>
+            <div className={styles['subscription-tips']}>
+              This time, we plan to raise 1,000 ETH, and we will stop raising it after reaching 1,000 ETH. Each wallet address that is eligible for subscription will randomly receive a subscription quota of 0.2~1ETH. We will technically limit multi-wallet subscriptions by one person. We will guarantee the rights and interests of early investors in the future, and at the same time, please read our dos in detail to know the ownership of their rights and interests.
+            </div>
+            <div className={styles['price-exchange-content']}>
+              <div>0.2ETH=10000GRA</div>
+              <div>1ETH=50000GRA</div>
+            </div>
+            <div className={styles['subscription-tips']}>
+              The GRA obtained from this subscription will be locked for one year, and will be unlocked linearly at 7% per month after one year, and the unlocking will be completed within 14 months. This round of supporters will redeem the unlocked Tokens through the CryptoGravity official website
+            </div>
           </div>
         </div>
         <div className={styles["teams-wrap"]} id='teams'>

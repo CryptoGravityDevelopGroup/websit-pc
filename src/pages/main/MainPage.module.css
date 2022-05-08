@@ -86,6 +86,12 @@
   justify-content: space-between;
   position: relative;
 }
+.introduction-subscription-content {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  align-items: center;
+}
 .introduction-item {
   display: flex;
   flex-direction: column;
@@ -379,6 +385,85 @@
 .imgs-token-active {
   opacity: 1;
   right: 0;
+}
+.tokens-subscription-wrap {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.img-tokens-subscription {
+  width: 340px;
+  margin: 0 auto;
+  margin-top: 56px;
+}
+.tokens-confrim-conetnt-wrap {
+  width: 962px;
+  height: 172px;
+  border-radius: 10px;
+  opacity: 1;
+  border: 1px solid rgba(0.20625001192092896, 0.4342499375343323, 0.5625, 1);
+  background: rgba(5,2,22,1);
+  box-shadow: 0 0 20px 0 rgba(84,176,252,0.25);
+  margin-top: 30px;
+  color: rgba(255,255,255,0.8);
+  font-size: 16px;
+  font-weight: 400;
+  padding: 30px;
+  box-sizing: border-box;
+  margin-bottom: 56px;
+}
+.tokens-confrim-conetnt-button-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+.additional-materials-btn {
+  width: 243px;
+  height: 48px;
+  border-radius: 10px;
+  opacity: 1;
+  border: 2px solid #353945;
+  color: rgba(252,252,253,1);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: center;
+  margin-right: 16px;
+  cursor: pointer;
+}
+.sign-up-btn {
+  width: 243px;
+  height: 48px;
+  border-radius: 10px;
+  opacity: 1;
+  background: rgba(24,111,242,1);
+  color: rgba(255,255,255,1);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: center;
+  cursor: pointer;
+}
+.subscription-tips {
+  padding: 0 60px;
+  color: rgba(255,255,255,0.8);
+  font-size: 16px;
+  font-weight: 400;
+}
+.price-exchange-content {
+  width: 513px;
+  height: 66px;
+  border-radius: 10px;
+  opacity: 1;
+  background: rgba(255,255,255,0.1);
+  padding: 20px 26px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255,255,255,1);
+  font-size: 24px;
+  font-weight: 700;
+  margin: 20px;
 }
 .teams-wrap {
   width: 1288px;
