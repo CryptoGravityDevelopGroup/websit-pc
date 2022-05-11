@@ -57,9 +57,9 @@ export function Header() {
     window.addEventListener('scroll', handleScroll);
   }, [])
   useEffect(() => {
-    connectWallte();
+    // connectWallte();
     handleScroll();
-  })
+  }, [])
   return (
     <>
     <div style={{height:'80px'}}></div>
