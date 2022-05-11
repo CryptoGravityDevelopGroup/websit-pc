@@ -384,11 +384,11 @@ export function MainPage() {
           </div>
         </div> */}
         <div className={styles["tokens-subscription-wrap"]} id='tokens'>
-          <div className={styles["introduction-title-wrap"]}>
+          {/* <div className={styles["introduction-title-wrap"]}>
             <div className={styles["introduction-title"]}>Token subscription</div>
             <div className={styles["introduction-line"]}></div>
-          </div>
-          <div className={styles['introduction-subscription-content']}>
+          </div> */}
+          {/* <div className={styles['introduction-subscription-content']}>
             <img className={[styles['img-tokens-subscription']].join(' ')} src={img_tokens} alt="" />
             <div className={styles['tokens-confrim-conetnt-wrap']}>
               <div>We will confirm the subscription of early supporters through the registration lottery. Before participating in the registration, supplementary information is required, and some operations are required to prove that it is not a robot.</div>
@@ -416,6 +416,9 @@ export function MainPage() {
             <div className={styles['subscription-tips']}>
               The GRA obtained from this subscription will be locked for one year, and will be unlocked linearly at 7% per month after one year, and the unlocking will be completed within 14 months. This round of supporters will redeem the unlocked Tokens through the CryptoGravity official website
             </div>
+          </div> */}
+          <div className='additional-materials-wrap'>
+            
           </div>
         </div>
         <div className={styles["teams-wrap"]} id='teams'>
